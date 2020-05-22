@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[白居易V技术驿站]]></title>
+        <description><![CDATA[白居易V技术驿站]]></description>
+        <link>https://vonchange.github.io/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Fri, 22 May 2020 07:54:20 GMT</lastBuildDate>
+        <atom:link href="https://vonchange.github.io/rss" rel="self" type="application/rss+xml"/>
+        <author><![CDATA[vonchange]]></author>
+        <managingEditor><![CDATA[vonchange@163.com]]></managingEditor>
+        <webMaster><![CDATA[vonchange@163.com]]></webMaster>
+        <category><![CDATA[orm]]></category>
+        <category><![CDATA[k8s]]></category>
+        <category><![CDATA[devops]]></category>
+        <category><![CDATA[java]]></category>
+        <item>
+            <title><![CDATA[简介]]></title>
+            <description><![CDATA[教程分享均是笔者亲身学习经验总结,涉及到的知识点均亲身试验,但有时为了知识完整性,可能并未亲自确认,希望能及时反馈,避免更多人踩坑.]]></description>
+            <link>https://vonchange.github.io/</link>
+            <guid isPermaLink="true">https://vonchange.github.io/</guid>
+            <dc:creator><![CDATA[vonchange]]></dc:creator>
+        </item>
+    </channel>
+</rss>
