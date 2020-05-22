@@ -1,0 +1,144 @@
+{
+    "title": "白居易V技术驿站",
+    "author": "vonchange",
+    "description": "白居易V技术驿站",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "links": {
+        "sidebar": {
+            "技术博客": "https://vonchange.github.io/"
+        }
+    },
+    "plugins": [
+        "toc",
+        "pageview-count",
+        "-lunr",
+        "-search",
+        "search-plus",
+        "splitter",
+        "-sharing",
+        "sharing-plus",
+        "expandable-chapters-small",
+        "anchor-navigation-ex",
+        "edit-link-plus",
+        "code",
+        "chart",
+        "favicon-absolute",
+        "github-buttons",
+        "advanced-emoji",
+        "rss",
+        "sitemap-general",
+        "copyright",
+        "tbfed-pagefooter",
+        "mygitalk",
+        "donate",
+        "diff",
+        "simple-mind-map",
+        "hide-element",
+        "audio_image",
+        "mermaid-gb3"
+    ],
+    "pluginsConfig": {
+        "favicon-absolute": {
+            "favicon": "/favicon.ico",
+            "appleTouchIconPrecomposed152": "/apple-touch-icon-precomposed-152.png"
+        },
+        "toc": {
+            "addClass": true,
+            "className": "toc"
+        },
+        "github-buttons": {
+            "buttons": [{
+                "user": "snowdreams1006",
+                "repo": "snowdreams1006.github.io",
+                "type": "star",
+                "size": "small"
+            }]
+        },
+        "sharing": {
+            "douban": true,
+            "facebook": false,
+            "google": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": true,
+            "qzone": true,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": true,
+            "whatsapp": false,
+            "all": [
+                "facebook", "google", "twitter",
+                "weibo", "instapaper", "linkedin",
+                "pocket", "stumbleupon"
+            ]
+        },
+        "edit-link-plus": {
+            "base": {
+              "vonchange.github.io":"https://github.com/VonChange/VonChange.github.io/edit/master"
+            },
+            "defaultBase": "https://github.com/VonChange/VonChange.github.io/edit/master",
+            "label": "编辑本页"
+        },
+        "chart": {
+            "type": "c3"
+        },
+        "rss": {
+            "title": "白居易V技术驿站",
+            "description": "白居易V技术驿站",
+            "author": "vonchange",
+            "site_url": "https://vonchange.github.io/",
+            "feed_url": "https://vonchange.github.io/rss",
+            "managingEditor": "vonchange@163.com",
+            "webMaster": "vonchange@163.com",
+            "categories": [
+                "orm",
+                "k8s",
+                "devops",
+                "java"
+            ]
+        },
+        "sitemap-general": {
+            "prefix": "https://vonchange.github.io/"
+        },
+        "copyright": {
+            "site": "https://vonchange.github.io/",
+            "author": "白居易V技术驿站",
+            "website": "白居易V技术驿站",
+            "copyProtect": false
+        },
+        "tbfed-pagefooter": {
+            "copyright": "&copy vonchange",
+            "modify_label": "文件修订时间: ",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "mygitalk": {
+            "clientID": "7f7363b6e6e3c9a06f4f",
+            "clientSecret": "6e71673a0cfb622b535af4c00b0622cf2d34d31b",
+            "repo": "vonchange.github.io",
+            "owner": "vonchange",
+            "admin": ["vonchange"],
+            "distractionFreeMode": false
+        },
+        "donate": {
+            "wechat": "/wechat.jpg",
+            "alipay": "/alipay.jpg",
+            "title": "",
+            "button": "赏",
+            "alipayText": "支付宝",
+            "wechatText": "微信"
+        },
+        "hide-element": {
+            "elements": ["a.gitbook-link[href='https://www.gitbook.com']"]
+        },
+        "simple-mind-map":{
+            "preset": "colorful"
+        }
+    }
+}
