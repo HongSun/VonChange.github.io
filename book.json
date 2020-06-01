@@ -6,7 +6,7 @@
     "gitbook": "3.2.3",
     "links": {
         "sidebar": {
-            "技术博客": "https://vonchange.github.io/"
+            "白居易V的技术博客": "https://vonchange.github.io/"
         }
     },
     "plugins": [
@@ -49,8 +49,8 @@
         },
         "github-buttons": {
             "buttons": [{
-                "user": "snowdreams1006",
-                "repo": "snowdreams1006.github.io",
+                "user": "vonchange",
+                "repo": "vonchange.github.io",
                 "type": "star",
                 "size": "small"
             }]
@@ -109,7 +109,7 @@
         },
         "copyright": {
             "site": "https://vonchange.github.io/",
-            "author": "白居易V技术驿站",
+            "author": "白居易V",
             "website": "白居易V技术驿站",
             "copyProtect": false
         },
@@ -127,8 +127,8 @@
             "distractionFreeMode": false
         },
         "donate": {
-            "wechat": "/wechat.jpg",
-            "alipay": "/alipay.jpg",
+            "wechat": "doc/image/wx.jpeg",
+            "alipay": "doc/image/zfb.jpeg",
             "title": "",
             "button": "赏",
             "alipayText": "支付宝",
