@@ -1,16 +1,17 @@
 {
-    "title": "白居易V技术驿站",
+    "title": "小白鼠V技术驿站",
     "author": "vonchange",
-    "description": "白居易V技术驿站",
+    "description": "小白鼠V技术驿站",
     "language": "zh-hans",
     "gitbook": "3.2.3",
     "links": {
         "sidebar": {
-            "白居易V的技术博客": "https://vonchange.github.io/"
+            "小白鼠V的技术博客": "https://vonchange.github.io/"
         }
     },
     "plugins": [
         "toc",
+        "theme-comscore",
         "pageview-count",
         "-lunr",
         "-search",
@@ -90,8 +91,8 @@
             "type": "c3"
         },
         "rss": {
-            "title": "白居易V技术驿站",
-            "description": "白居易V技术驿站",
+            "title": "小白鼠V技术驿站",
+            "description": "小白鼠V技术驿站",
             "author": "vonchange",
             "site_url": "https://vonchange.github.io/",
             "feed_url": "https://vonchange.github.io/rss",
@@ -109,8 +110,8 @@
         },
         "copyright": {
             "site": "https://vonchange.github.io/",
-            "author": "白居易V",
-            "website": "白居易V技术驿站",
+            "author": "小白鼠V",
+            "website": "小白鼠V技术驿站",
             "copyProtect": false
         },
         "tbfed-pagefooter": {
