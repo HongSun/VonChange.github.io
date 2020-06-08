@@ -1,0 +1,690 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>spring-data-mybatis-mini极简ORM · 小白鼠V技术驿站</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="vonchange">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="host/gitea.html" />
+    
+
+    <link href="https://vonchange.github.io/rss" title="小白鼠V技术驿站" rel="alternate" type="application/rss+xml" />
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"vonchange","repo":"vonchange.github.io","type":"star","size":"small"}]};
+    </script>
+
+    
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+    
+    
+    
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/apple-touch-icon-precomposed-152.png">
+    
+    
+        
+    
+    
+        
+    
+
+    
+    <link rel="stylesheet" href="../gitbook/gitbook-plugin-chart/c3/c3.min.css">
+    <script src="../gitbook/gitbook-plugin-chart/c3/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-chart/c3/c3.min.js"></script>
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://vonchange.github.io/" target="_blank" class="custom-link">小白鼠V的技术博客</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    博客总揽
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    闲置主机做开发服务器
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="host/ubuntu.html">
+            
+                <a href="host/ubuntu.html">
+            
+                    
+                    搭建ubuntu server及其k8s
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="host/gitlab-ci.html">
+            
+                <a href="host/gitlab-ci.html">
+            
+                    
+                    搭建gitlab并使用CICD部署HelloWorld
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="host/frp.html">
+            
+                <a href="host/frp.html">
+            
+                    
+                    使用frp代理本地机器到公网
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="host/gitea.html">
+            
+                <a href="host/gitea.html">
+            
+                    
+                    gitea替换gitlab部署CICD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="mini.html">
+            
+                <a href="mini.html">
+            
+                    
+                    spring-data-mybatis-mini极简ORM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >spring-data-mybatis-mini极简ORM</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p><a href="https://github.com/VonChange/spring-data-mybatis-mini" target="_blank">github&#x5730;&#x5740;</a>
+<a href="https://gitee.com/vonchange/spring-data-mybatis-mini" target="_blank">gitee&#x5730;&#x5740;</a></p>
+<p><strong>&#x7B49;&#x540C;&#x4E8E;spring data jdbc + mybatis &#x52A8;&#x6001;sql&#x80FD;&#x529B;</strong></p>
+<p><strong>&#x5927;&#x9053;&#x81F3;&#x7B80; &#x9EBB;&#x96C0;&#x867D;&#x5C0F; &#x4E94;&#x810F;&#x4FF1;&#x5168;</strong></p>
+<ol>
+<li><p>&#x629B;&#x5F03;&#x7E41;&#x7410;&#x7684;xml &#x53EA;&#x4F7F;&#x7528;mybatis&#x6A21;&#x7248;&#x5F15;&#x64CE;&#x5373;&#x52A8;&#x6001;sql&#x80FD;&#x529B; sql&#x5199;&#x5728;markdown&#x6587;&#x4EF6;&#x91CC;
+&#x66F4;&#x5BB9;&#x6613;&#x4E66;&#x5199;&#x548C;&#x9605;&#x8BFB; sql&#x80FD;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x67E5;&#x770B;</p>
+</li>
+<li><p>&#x5E95;&#x5C42;&#x57FA;&#x4E8E;springJdbc &#x800C;&#x4E0D;&#x662F;mybatis &#x66F4;&#x76F4;&#x63A5;&#x7EAF;&#x7CB9;</p>
+</li>
+<li><p>&#x63D0;&#x4F9B;&#x5355;&#x8868;&#x589E;&#x5220;&#x6539;(&#x6CA1;&#x6709;&#x5220;&#x9664;) &#x6279;&#x91CF;&#x66F4;&#x65B0;&#x63D2;&#x5165;&#x7B49;&#x57FA;&#x7840;&#x65B9;&#x6CD5; &#x652F;&#x6301;&#x5206;&#x9875; &#x591A;&#x6570;&#x636E;&#x6E90; &#x8BFB;&#x5199;&#x5206;&#x79BB;</p>
+</li>
+<li><p>mybatis&#x6700;&#x5927;&#x4F18;&#x70B9;&#x5C31;&#x662F;sql&#x6A21;&#x7248;&#x5F15;&#x64CE;
+&#x6211;&#x4E5F;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x4F7F;&#x7528;&#x8FD9;&#x90E8;&#x5206;&#x529F;&#x80FD;(&#x5BF9;&#x4E8E;&#x4F7F;&#x7528;&#x8FC7;mybatis&#x7684;&#x65E0;&#x5B66;&#x4E60;&#x6210;&#x672C;) &#x4F46;&#x5E95;&#x5C42;&#x4F7F;&#x7528;springJDBC
+&#x66F4;&#x7B80;&#x5355;&#x76F4;&#x63A5; </p>
+</li>
+<li>&#x7B80;&#x5316;mybatis&#x52A8;&#x6001;sql&#x5199;&#x6CD5;(&#x53EF;&#x6DF7;&#x7528;-&#x5199;&#x6CD5;&#x8FD8;&#x662F;mybatis&#x90A3;&#x5957;) &#x6BD4;&#x5982;</li>
+</ol>
+<pre><code>[@and id in idList] &#x7B49;&#x4E8E;
+&lt;if test=&quot;null!=idList and idList.size&gt;0&quot;&gt; and id in &lt;foreach
+collection=&quot;idList&quot; index=&quot;index&quot; item=&quot;item&quot; open=&quot;(&quot; separator=&quot;,&quot;
+close=&quot;)&quot;&gt;#{item}&lt;/foreach&gt;&lt;/if&gt;
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/16709942-f9fa815ddebef368.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x4F8B;&#x5B50;">
+== why not spring data jdbc,jpa,hibernate,mybaits,mybatis-plus&#x7B49;</p>
+<ol>
+<li>&#x57FA;&#x4E8E;spring data jdbc&#x7406;&#x5FF5;&#x4F46;&#x6269;&#x5C55;&#x4F7F;&#x7528;mybatis&#x52A8;&#x6001;sql&#x80FD;&#x529B; &#x5BF9;&#x4E8E;&#x590D;&#x6742;&#x70B9;&#x67E5;&#x8BE2;&#x652F;&#x6301;&#x66F4;&#x597D;</li>
+<li>&#x76F8;&#x6BD4;jpa &#x5E95;&#x5C42;&#x4F7F;&#x7528;hibernate(&#x5F53;&#x7136;&#x4E5F;&#x80FD;sql) &#x53EA;&#x6709;sql &#x57FA;&#x4E8E;spring jdbc
+&#x65E0;jpa&#x6839;&#x636E;&#x65B9;&#x6CD5;&#x540D;(&#x590D;&#x6742;&#x70B9;&#x9700;&#x8981;&#x4F60;&#x5B66;&#x4E60;&#x601D;&#x8003;,&#x540D;&#x5B57;&#x8001;&#x957F;,&#x4E0D;&#x900F;&#x660E;) &#x7B80;&#x5355;&#x6CA1;&#x6709;&#x9ED1;&#x9B54;&#x6CD5; &#x5B66;&#x4E60;&#x6210;&#x672C;&#x4F4E;
+sql&#x5199;&#x5728;markdown&#x91CC;,&#x7EAF;jdbc&#x66F4;&#x6613;&#x4E8E;&#x8C03;&#x4F18;</li>
+<li>&#x6BD4;&#x4EF7;mybatis &#x6CA1;&#x6709;cache,&#x590D;&#x6742;join&#x6620;&#x5C04;&#x5B9E;&#x4F53;,&#x65E0;resultType,resultMap&#x914D;&#x7F6E;
+&#x6269;&#x5C55;&#x5355;&#x8868;CRUD &#x53EA;&#x7528;&#x4ED6;&#x7684;&#x52A8;&#x6001;sql&#x80FD;&#x529B;&#x7684;&#x6A21;&#x7248;&#x5F15;&#x64CE;&#x548C;sql&#x653E;&#x5230;&#x6587;&#x4EF6;&#x7BA1;&#x7406;&#x601D;&#x60F3; &#x53BB;&#x7E41;&#x5C31;&#x7B80;
+&#x53D6;&#x5176;&#x4F18;&#x70B9;&#x629B;&#x5F03;&#x9E21;&#x808B;&#x529F;&#x80FD;</li>
+<li>&#x76F8;&#x6BD4;mybatis-plus&#x7B49;&#x6269;&#x5C55;mybatis&#x6846;&#x67B6; &#x4ED6;&#x4EEC;&#x505A;&#x7684;&#x8D8A;&#x6765;&#x8D8A;&#x50CF;hibernate,jpa
+&#x641E;Criteria&#x90A3;&#x5957; &#x57FA;&#x672C;&#x8131;&#x79BB;mybatis&#x4F18;&#x70B9; </li>
+<li>&#x67E5;&#x8BE2;&#x53EA;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x9009;&#x62E9; &#x5C31;&#x662F;sql&#x5199;&#x5728;markdown&#x6587;&#x4EF6;&#x91CC; &#x4E0D;&#x4F1A;&#x63D0;&#x4F9B;&#x7C7B;&#x4F3C;hibernate Criteria
+&#x591A;&#x79CD;&#x9009;&#x62E9;&#x8BF4;&#x662F;&#x7075;&#x6D3B;&#x4F46;&#x9879;&#x76EE;&#x591A;&#x79CD;&#x6709;&#x591A;&#x79CD;&#x5B9E;&#x73B0;&#x5199;&#x6CD5; &#x4F60;&#x4F1A;&#x6709;&#x6253;&#x4EBA;&#x7684;&#x51B2;&#x52A8; </li>
+<li>&#x7F13;&#x5B58;&#x53EF;&#x4EE5;&#x7528;SpringCache&#x7B49;&#x4E0A;&#x5C42;&#x65B9;&#x6848; </li>
+<li>&#x67E5;&#x8BE2;&#x53EA;&#x80FD;&#x6620;&#x5C04;&#x5355;&#x4E00;&#x5B9E;&#x4F53;(VO,DO,DTO&#x5747;&#x53EF;) &#x4F46;&#x73B0;&#x5728;&#x63A8;&#x8350;&#x51CF;&#x5C11;JOIN &#x63A8;&#x8350;&#x4EE3;&#x7801;&#x91CC;join &#x540E;&#x671F;&#x4F1A;&#x5C1D;&#x8BD5;&#x5199;&#x65B0;&#x7684;&#x7EC4;&#x4EF6;sqlHelper&#x65B9;&#x5F0F;&#x7B80;&#x5316;</li>
+</ol>
+<p>== Getting Started</p>
+<ol>
+<li>&#x63D0;&#x4F9B;&#x5355;&#x8868;&#x589E;&#x5220;&#x6539;(&#x6CA1;&#x6709;&#x7269;&#x7406;&#x5220;&#x9664;) &#x6279;&#x91CF;&#x66F4;&#x65B0;&#x63D2;&#x5165;&#x7B49;&#x57FA;&#x7840;&#x65B9;&#x6CD5;</li>
+<li>&#x629B;&#x5F03;&#x7E41;&#x7410;&#x7684;xml &#x6240;&#x6709;sql &#x5199;&#x5728;markdown&#x6587;&#x4EF6;&#x91CC; &#x4FBF;&#x4E8E;&#x4E66;&#x5199;&#x548C;&#x9605;&#x8BFB;
+&#x9ED8;&#x8BA4;&#x4F4D;&#x7F6E;sql&#x5305;&#x4E0B;repository&#x63A5;&#x53E3;&#x540D;.md @ConfigLocation &#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x4F4D;&#x7F6E;</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;&#x66F4;&#x65B0; update/save/insert/delete &#x5F00;&#x5934;&#x65B9;&#x6CD5;&#x662F;&#x66F4;&#x65B0;&#x64CD;&#x4F5C; </li>
+<li>&#x652F;&#x6301;&#x5206;&#x9875; &#x5206;&#x9875;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570; </li>
+<li>&#x5BF9;&#x4E8E; &quot; &gt; &quot;,&quot; &lt; &quot;,&quot; &gt;= &quot;,&quot; &lt;= &quot;,&quot; &lt;&gt; &quot;&#x65E0;&#x9700;&#x8F6C;&#x4E49;(&#x4E24;&#x8FB9;&#x9700;&#x6709;&#x7A7A;&#x683C; &#x6211;&#x4F1A;&#x81EA;&#x52A8;&#x66FF;&#x6362;&#x8F6C;&#x4E49;)</li>
+<li>&#x63D0;&#x4F9B;if&#x5224;&#x65AD;&#x548C;in&#x67E5;&#x8BE2;&#x7B80;&#x5199;&#x65B9;&#x5F0F;(&#x5077;&#x61D2; &gt;-&lt;)</li>
+<li>&#x6CE8;&#x89E3;&#x5C5E;&#x4E8E;spring data jpa &#x4F53;&#x7CFB;&#x7684;</li>
+<li>&#x652F;&#x6301;sql&#x7247;&#x6BB5; [@sql XX] XX markdown&#x6587;&#x4EF6;XX&#x540D;&#x7684;sql&#x7247;&#x6BB5;</li>
+<li>&#x67E5;&#x8BE2;&#x8FD4;&#x56DE;&#x5B9E;&#x4F53; &#x4E0D;&#x9700;&#x8981;&#x5FC5;&#x987B;&#x662F;DO &#x5982;&#x679C;&#x6CA1;&#x7279;&#x6B8A;&#x89C4;&#x8303;
+&#x4E5F;&#x53EF;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;VO&#x5C42;&#x5B9E;&#x4F53;(&#x629B;&#x5F03;&#x7E41;&#x7410;&#x7684;DO-&gt;DTO-&gt;VO &#x5077;&#x61D2;&#x8F7B;&#x55B7;)</li>
+<li>&#x652F;&#x6301;&#x6279;&#x91CF;&#x66F4;&#x65B0;&#x63D2;&#x5165;&#xFF08;jdbc&#x94FE;&#x63A5;&#x53C2;&#x6570;&#x9700;&#x52A0;&#x5165;rewriteBatchedStatements=true&amp;allowMultiQueries=true&#xFF09;</li>
+<li>&#x5206;&#x9875;&#x67D0;&#x4E9B;&#x7279;&#x6027;&#x652F;&#x6301;mysql,oracle &#x4E3B;&#x652F;&#x6301;mysql</li>
+<li>&#x4F7F;&#x7528;&#x7B80;&#x5355; &#x7EA6;&#x5B9A;&#x5927;&#x4E8E;&#x914D;&#x7F6E; &#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x57FA;&#x672C;&#x90FD;&#x6EE1;&#x8DB3;</li>
+<li>&#x652F;&#x6301;LocalDateTime LocalTime jdk8&#x66F4;&#x65B9;&#x4FBF;&#x7684;&#x65F6;&#x95F4;&#x7C7B;&#x578B;</li>
+</ol>
+<p>== &#x5176;&#x4ED6;&#x7279;&#x6027; &#x65E0;&#x7279;&#x6B8A;&#x9700;&#x8981;&#x53EF;&#x4E0D;&#x7528;&#x5173;&#x5FC3; </p>
+<ol>
+<li>&#x5206;&#x9875; &#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x540C;&#x540D;+Count&#x7684;sql &#x4F18;&#x5316;&#x5206;&#x9875; </li>
+<li>&#x652F;&#x6301;&#x8BFB;&#x5199;&#x5206;&#x79BB; &#x6839;&#x636E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x6DFB;&#x52A0;@ReadDataSource&#x5728;&#x65B9;&#x6CD5;&#x540D;&#x4E0A; &#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x591A;&#x6570;&#x636E;&#x6E90;&#x968F;&#x673A;&#x53D6;
+&#x53EF;&#x81EA;&#x5B9A;&#x4E49;</li>
+<li>&#x591A;&#x6570;&#x6E90;&#x652F;&#x6301;&#x4F46;&#x5728;&#x5FAE;&#x670D;&#x52A1;&#x5316;&#x6F6E;&#x6D41;&#x91CC;&#x5C3D;&#x91CF;&#x4FDD;&#x8BC1;&#x540C;&#x4E00;&#x6570;&#x636E;&#x6E90;</li>
+</ol>
+<p>== &#x4F7F;&#x7528;&#x6B65;&#x9AA4;&#x57FA;&#x672C;&#x540C;jpa,spring data jdbc</p>
+<ol>
+<li>&#x6DFB;&#x52A0;&#x4F9D;&#x8D56; </li>
+<li>@EnableMybatisMini</li>
+<li>extends BaseRepository<userbasedo, long=""> &#x6216; extends
+BaseQueryRepository(&#x53EA;&#x67E5;&#x8BE2;) </userbasedo,></li>
+<li>&#x4F7F;&#x7528;&#x4F8B;&#x5B50;demo&#x9879;&#x76EE;<a href="https://github.com/VonChange/spring-data-mybatis-mini-demo/blob/master/src/test/java/com/vonchange/nine/demo/dao/UserBaseRepositoryTest.java" target="_blank">spring-data-mybatis-mini-demo</a></li>
+</ol>
+<p> Here is a quick teaser of an application using Spring Data
+Repositories in Java:</p>
+<p>=== Maven configuration</p>
+<p>Add the Maven dependency:</p>
+<pre><code>  &lt;!-- spring boot 2.x &#x662F;&#x4F7F;&#x7528;&#x7248;&#x672C;2.3.3 &#x4F4E;&#x7248;&#x672C;&#x6BD4;&#x5982;1.5.x &#x4F7F;&#x7528;&#x7248;&#x672C;1.9.1 --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.vonchange.common&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-data-mybatis-mini&lt;/artifactId&gt;
+  &lt;version&gt;2.2.3&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+       &lt;groupId&gt;org.springframework.data&lt;/groupId&gt;
+       &lt;artifactId&gt;spring-data-commons&lt;/artifactId&gt;
+ &lt;/dependency&gt;
+ &lt;dependency&gt;
+         &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+         &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
+ &lt;/dependency&gt;
+&lt;dependency&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+            &lt;version&gt;8.0.15&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><pre><code>import org.springframework.data.mybatis.mini.jdbc.repository.query.ConfigLocation;
+import org.springframework.data.mybatis.mini.jdbc.repository.support.BaseRepository;
+import org.springframework.data.repository.query.Param;
+
+public interface UserBaseRepository extends BaseRepository&lt;UserBaseDO, Long&gt; {
+  @ReadDataSource
+  List&lt;UserBaseDO&gt; findList(@Param(&quot;userName&quot;) String userName,
+                          @Param(&quot;createTime&quot;) Date createTime);
+  Page&lt;UserBaseDO&gt; findList(Pageable pageable, @Param(&quot;userName&quot;) String userName,@Param(&quot;createTime&quot;) Date createTime);
+  String findUserName(@Param(&quot;userName&quot;) String userName);
+
+  List&lt;UserBaseVO&gt; findListByIds(@Param(&quot;userName&quot;) String userName,
+                           @Param(&quot;createTime&quot;) Date createTime,@Param(&quot;idList&quot;)List&lt;Long&gt; idList);
+
+  int updateIsDelete(@Param(&quot;isDelete&quot;) Integer isDelete,@Param(&quot;id&quot;) Long id);
+
+}
+</code></pre><blockquote>
+<p>&#x9ED8;&#x8BA4;sql &#x5305;&#x4E0B;&#x540C;&#x540D;&#x5427;UserBaseRepository.md &#x8BC6;&#x522B;```&#x5F00;&#x5934;&#x7ED3;&#x5C3E;&#x7684; -- &#x5B9A;&#x4E49;&#x7684;&#x540C;&#x540D;&#x65B9;&#x6CD5;
+&#x53C2;&#x89C1;<a href="https://github.com/VonChange/spring-data-mybatis-mini/blob/master/UserBaseRepository.md" target="_blank">UserBaseRepository.md</a></p>
+<p>&#x5B9E;&#x4F53;&#x7C7B; &#x5B9A;&#x4E49;ID &#x548C;TABLE &#x540D;
+```
+import javax.persistence.Id;
+import javax.persistence.Table;</p>
+</blockquote>
+<p>@Data
+@Table(name = &quot;user_base&quot;)
+public class UserBaseDO {
+    @Id
+    private Long id;
+    private String userName;
+    private String  firstPhone;</p>
+<p>}</p>
+<pre><code>
+
+</code></pre><p>@Service
+public class MyService {
+  @Resource
+  private final UserBaseRepository userBaseRepository;</p>
+<p>  public void doWork() {
+     List<userbasedo> userBaseDOList = userBaseRepository.findList(&quot;test&quot;,new Date());
+ }
+}</userbasedo></p>
+<p>//&#x6DFB;&#x52A0; EnableMybatisMini &#x6CE8;&#x89E3; 
+@EnableMybatisMini
+@SpringBootApplication 
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+} </p>
+<pre><code>
+
+
+&gt; &#x5077;&#x61D2;&#x7B80;&#x5316; if test &#x548C;in&#x67E5;&#x8BE2; &#x8BC6;&#x522B; {@&#x5F00;&#x5934;
+
+&gt;   \[@and id in idList] &#x7B49;&#x4E8E;
+</code></pre><if test="null!=idList and idList.size&gt;0"> and id in <foreach collection="idList" index="index" item="item" open="(" separator="," close=")">#{item}</foreach></if>
+
+<pre><code>
+&gt;   \[@and user_name &lt;&gt; userName] &#x7B49;&#x4E8E;
+</code></pre><if test="null!=userName and &apos;&apos;!=userName"> and user_name &lt;&gt;
+#{userName} </if>
+   ```
+
+3. in &#x67E5;&#x8BE2;List&#x5B9E;&#x4F53;&#x4E0B;&#x7684;&#x5C5E;&#x6027; \[@and id in userList:id]
+
+4.  like 
+
+ ```
+ [@and user_name like userName] &#x7B49;&#x4E8E; and user_name like CONCAT(&apos;%&apos;,?,&apos;%&apos;)  
+ [@and user_name like userName%] &#x7B49;&#x4E8E; and user_name like  CONCAT(?,&apos;%&apos;) 
+ [@and user_name like userName%] &#x7B49;&#x4E8E; and user_name like CONCAT(&apos;%&apos;,&apos;test&apos;)   
+
+ ```
+
+5. &#x5176;&#x4ED6;&#x975E;4&#x4E2A;&#x5206;&#x9694;
+
+```
+[@AND C.DESCRIPTION LIKE #{bean.description:like}  or C.title like #{bean.description:like}]
+&#x7B49;&#x4E8E;
+<if test="null!=bean.description and &apos;&apos;!=bean.description">
+AND C.DESCRIPTION LIKE  CONCAT(&apos;%&apos;,#{bean.description},&apos;%&apos;)    or C.title like CONCAT(&apos;%&apos;,#{bean.description},&apos;%&apos;)
+</if>
+ [@AND content -&gt; &apos;$.account&apos; = #{bean.account}]
+ &#x7B49;&#x4E8E;
+ <if test="null!=bean.account and &apos;&apos;!=bean.account">
+ AND content -&gt; &apos;$.account&apos; = #{bean.account}
+ </if>
+
+<pre><code>
+6. \[@sql XX] XX markdown&#x6587;&#x4EF6;XX&#x540D;&#x7684;sql&#x7247;&#x6BB5;
+
+&gt;  &#x76F8;&#x5173;&#x6CE8;&#x89E3; 
+
+1. @ColumnNot &#x975E;&#x5B57;&#x6BB5;&#x6CE8;&#x89E3; 
+
+2. InsertIfNull UpdateIfNull &#x63D2;&#x5165;&#x6216;&#x8005;&#x66F4;&#x65B0;&#x4E3A;&#x7A7A;&#x65F6;&#x9ED8;&#x8BA4;&#x503C; &#x53EF;&#x4F7F;&#x7528;&#x51FD;&#x6570;
+
+3. UpdateNotNull updateAllField&#x65B9;&#x6CD5;NULL&#x503C;&#x5FFD;&#x7565;
+
+4. ReadDataSource &#x6307;&#x5B9A;&#x67D0;&#x4E2A;&#x65B9;&#x6CD5;&#x8BFB;&#x6570;&#x636E;&#x6E90; &#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x591A;&#x6570;&#x636E;&#x6E90;&#x968F;&#x673A;&#x53D6;
+</code></pre><p> //&#x81EA;&#x5B9A;&#x4E49; &#x8BFB;&#x5E93;&#x6570;&#x636E;&#x6E90; &#x4E0D;&#x81EA;&#x5B9A;&#x4E49;&#x9ED8;&#x8BA4;&#x6240;&#x6709;&#x4F60;&#x8BBE;&#x7F6E;&#x7684;&#x6570;&#x636E;&#x6E90;
+    @Bean
+    public ReadDataSources initReadDataSources(){
+        return new ReadDataSources() {
+            @Override
+            public DataSource[] allReadDataSources() {
+                return new DataSource[]{mainDataSource(),mainDataSource(),readDataSource()};
+            }
+        };
+    }</p>
+<pre><code>
+&gt; &#x6279;&#x91CF;&#x66F4;&#x65B0;&#x63D2;&#x5165;
+
+1. jdbc&#x94FE;&#x63A5;&#x53C2;&#x6570;&#x9700;&#x52A0;&#x5165;rewriteBatchedStatements=true&amp;allowMultiQueries=true
+
+2. insertBatch updateBatch&#x65B9;&#x6CD5; &#x65E0;&#x9700;&#x5173;&#x5FC3;List&#x5BF9;&#x8C61;&#x5927;&#x5C0F; 
+
+3. &#x7ECF;&#x6D4B;&#x8BD5;&#x6BD4;&#x63D2;&#x5165;&#x6BD4;sql&#x62FC;&#x63A5; &#x5FEB;5&#x500D; &#x4F46;&#x66F4;&#x65B0;&#x5DEE;&#x4E0D;&#x591A; &#x7B80;&#x5355;&#x6570;&#x636E;&#x63D2;&#x5165;1&#x4E07;&#x8017;&#x65F6;2s&#x591A;&#x70B9;
+
+
+
+&lt;script type=&quot;text/javascript&quot;&gt;var targetUl = document.getElementsByClassName(&apos;page-inner&apos;)[0].getElementsByTagName(&apos;ul&apos;)[0];if(targetUl.getElementsByTagName(&apos;a&apos;).length&gt;0){targetUl.className=&apos;toc&apos;;}&lt;/script&gt;
+
+```html
+&#x4F5C;&#x8005;: &#x5C0F;&#x767D;&#x9F20;V
+&#x94FE;&#x63A5;: https://vonchange.github.io/doc/mini.html
+&#x6765;&#x6E90;: &#x5C0F;&#x767D;&#x9F20;V&#x6280;&#x672F;&#x9A7F;&#x7AD9;
+&#x672C;&#x6587;&#x539F;&#x521B;&#x53D1;&#x5E03;&#x4E8E;&#x300C;&#x5C0F;&#x767D;&#x9F20;V&#x6280;&#x672F;&#x9A7F;&#x7AD9;&#x300D;,&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;,&#x8C22;&#x8C22;&#x5408;&#x4F5C;!
+</code></pre><p><footer class="page-footer"><span class="copyright">&#xA9; vonchange all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;: 
+2020-06-08 14:51:15
+</span></footer></p>
+<div id="gitalk-container"></div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="host/gitea.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: gitea替换gitlab部署CICD">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"spring-data-mybatis-mini极简ORM","level":"1.3","depth":1,"previous":{"title":"gitea替换gitlab部署CICD","level":"1.2.4","depth":2,"path":"doc/host/gitea.md","ref":"doc/host/gitea.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toc","theme-comscore","pageview-count","-lunr","-search","search-plus","splitter","-sharing","sharing-plus","expandable-chapters-small","anchor-navigation-ex","edit-link-plus","code","chart","favicon-absolute","github-buttons","advanced-emoji","rss","sitemap-general","copyright","tbfed-pagefooter","mygitalk","donate","diff","simple-mind-map","hide-element","audio_image","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy vonchange","modify_label":"文件修订时间: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"diff":{"method":"diffChars","options":{},"type":"markdown"},"splitter":{},"copyright":{"copyProtect":false,"site":"https://vonchange.github.io/","author":"小白鼠V","website":"小白鼠V技术驿站"},"toc":{"addClass":true,"className":"toc"},"edit-link-plus":{"label":"编辑本页","base":{"vonchange.github.io":"https://github.com/VonChange/VonChange.github.io/edit/master"},"defaultBase":"https://github.com/VonChange/VonChange.github.io/edit/master"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"doc/image/zfb.jpeg","alipayText":"支付宝","button":"赏","title":"","wechat":"doc/image/wx.jpeg","wechatText":"微信"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{},"favicon":"/favicon.ico"},"sitemap-general":{"prefix":"https://vonchange.github.io/"},"hide-element":{"elements":["a.gitbook-link[href='https://www.gitbook.com']"]},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["orm","k8s","devops","java"],"title":"小白鼠V技术驿站","description":"小白鼠V技术驿站","author":"vonchange","site_url":"https://vonchange.github.io/","feed_url":"https://vonchange.github.io/rss","managingEditor":"vonchange@163.com","webMaster":"vonchange@163.com"},"audio_image":{},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"vonchange","repo":"vonchange.github.io","type":"star","size":"small"}]},"expandable-chapters-small":{},"mygitalk":{"flipMoveOptions":{},"clientID":"7f7363b6e6e3c9a06f4f","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["vonchange"],"createIssueManually":false,"distractionFreeMode":false,"repo":"vonchange.github.io","owner":"vonchange","enableHotKey":true,"clientSecret":"6e71673a0cfb622b535af4c00b0622cf2d34d31b","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"colorful","style":{},"type":"markdown"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"vonchange","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小白鼠V技术驿站","language":"zh-hans","links":{"sidebar":{"小白鼠V的技术博客":"https://vonchange.github.io/"}},"gitbook":"3.2.3","description":"小白鼠V技术驿站"},"file":{"path":"doc/mini.md","mtime":"2020-06-08T06:51:15.366Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-08T07:58:44.390Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link-plus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-rss/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copyright/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script>
+        
+    
+        
+        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mygitalk/mygitalk.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-simple-mind-map/bundle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
