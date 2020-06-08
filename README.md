@@ -16,4 +16,10 @@
 4. 如果做服务器 显卡就鸡肋了 如果专门做服务器 买个垃圾显卡或者DIY的 3000可以拥有很高的配置了 
 5. 虽然需要你部署研究 长久上 做开发 简单服务还是这个方案便宜
 ### 目录
-* [闲置主机做开发服务器](doc/host.md)
+* 闲置主机做开发服务器
+   * [搭建ubuntu server及其k8s](doc/host/ubuntu.md)
+   * [搭建gitlab并使用CICD部署HelloWorld](doc/host/gitlab-ci.md)
+   * [使用frp代理本地机器到公网](doc/host/frp.md)
+   * [使用轻量级gitee替换gitlab部署CICD](doc/host/gitee.md)
+* [spring-data-mybatis-mini极简ORM](doc/mini.md)
+

@@ -59,7 +59,8 @@ PermitRootLogin yes
 4. 安装上面教程安装即可 很简单 但前提必须ssh root能登录(没开之前 老是安装不上)
 5. 还有先不要着急安装 我安装后发现一个问题 [使用2.0.3版本后，在dashboard中看不到CPU、MEM]https://github.com/easzlab/kubeasz/issues/666
 6. 在教程AllinOne部署2.下载文件后 服务器上提前在roles/kube-node/templates/kubelet-config.yaml.j2文件中把 readOnlyPort: 0 改成 readOnlyPort: 10255 再执行部署
-7. 现在你已经安装好了k8s 
+7. 现在你已经安装好了k8s 可以动手各种kubectl命令 好记性不如烂笔头 正在的动手学习k8s
+
 
 
 

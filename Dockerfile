@@ -6,7 +6,7 @@ ADD  _book /usr/share/nginx/html
 COPY ./config/nginx.conf /etc/nginx/nginx.conf
 COPY config/init.sh /usr/share/nginx/html
 RUN chmod 777 /usr/share/nginx/html/init.sh
-
+VOLUME /usr/share/nginx/html
 ENTRYPOINT ["/usr/share/nginx/html/init.sh"]
 CMD ["nginx", "-g", "daemon off;"]
 
