@@ -8,3 +8,4 @@ git add .
 # 添加更新说明
 git commit -m "文档更新"
 # 推送到远程仓库,推送成功后等待一段时间后在线服务即可开启.
+git push master
