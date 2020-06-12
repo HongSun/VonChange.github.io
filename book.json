@@ -37,6 +37,7 @@
         "simple-mind-map",
         "hide-element",
         "audio_image",
+        "icp",
         "mermaid-gb3"
     ],
     "pluginsConfig": {
@@ -55,6 +56,9 @@
                 "type": "star",
                 "size": "small"
             }]
+        },
+        "icp": {
+            "number": "鲁ICP备20022988号"
         },
         "sharing": {
             "douban": true,

@@ -4,7 +4,7 @@
         <description><![CDATA[小白鼠V技术驿站]]></description>
         <link>https://vonchange.github.io/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 08 Jun 2020 08:05:23 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 12 Jun 2020 10:31:54 GMT</lastBuildDate>
         <atom:link href="https://vonchange.github.io/rss" rel="self" type="application/rss+xml"/>
         <author><![CDATA[vonchange]]></author>
         <managingEditor><![CDATA[vonchange@163.com]]></managingEditor>
@@ -15,9 +15,24 @@
         <category><![CDATA[java]]></category>
         <item>
             <title><![CDATA[简介]]></title>
-            <description><![CDATA[教程分享均是笔者亲身学习经验总结,涉及到的知识点均亲身试验,但有时为了知识完整性,可能并未亲自确认,希望能及时反馈,避免更多人踩坑.]]></description>
+            <description><![CDATA[博客基本是笔者亲身学习实践经验总结,涉及到的知识点均亲身试验,但有时可能并未亲自确认,写的比较粗略,希望能及时反馈,避免更多人踩坑.]]></description>
             <link>https://vonchange.github.io/</link>
             <guid isPermaLink="true">https://vonchange.github.io/</guid>
+            <dc:creator><![CDATA[vonchange]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[github地址
+gitee地址]]></description>
+            <link>https://vonchange.github.io/doc/mini.html</link>
+            <guid isPermaLink="true">https://vonchange.github.io/doc/mini.html</guid>
+            <dc:creator><![CDATA[vonchange]]></dc:creator>
+        </item>
+        <item>
+            <title><![CDATA[No title]]></title>
+            <description><![CDATA[搭建教程均采用docker k8s安装 需要一定的容器基础]]></description>
+            <link>https://vonchange.github.io/doc/host.html</link>
+            <guid isPermaLink="true">https://vonchange.github.io/doc/host.html</guid>
             <dc:creator><![CDATA[vonchange]]></dc:creator>
         </item>
         <item>
@@ -35,6 +50,8 @@
         </item>
         <item>
             <title><![CDATA[No title]]></title>
+            <description><![CDATA[突发性能即可 比如(我安装的是CentOS 7.2  网络按流量)
+ecs]]></description>
             <link>https://vonchange.github.io/doc/host/frp.html</link>
             <guid isPermaLink="true">https://vonchange.github.io/doc/host/frp.html</guid>
             <dc:creator><![CDATA[vonchange]]></dc:creator>
@@ -43,14 +60,6 @@
             <title><![CDATA[No title]]></title>
             <link>https://vonchange.github.io/doc/host/gitea.html</link>
             <guid isPermaLink="true">https://vonchange.github.io/doc/host/gitea.html</guid>
-            <dc:creator><![CDATA[vonchange]]></dc:creator>
-        </item>
-        <item>
-            <title><![CDATA[No title]]></title>
-            <description><![CDATA[github地址
-gitee地址]]></description>
-            <link>https://vonchange.github.io/doc/mini.html</link>
-            <guid isPermaLink="true">https://vonchange.github.io/doc/mini.html</guid>
             <dc:creator><![CDATA[vonchange]]></dc:creator>
         </item>
     </channel>
