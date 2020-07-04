@@ -7,7 +7,7 @@
         <title>搭建ubuntu server及其k8s · 小白鼠V技术驿站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="baidu-site-verification" content="cAxqlT3C5k">
         <meta name="author" content="vonchange">
         
         
@@ -50,7 +50,7 @@
                 
             
                 
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <link rel="stylesheet" href="/myfile/gitalk/dist/gitalk.css">
                 
             
                 
@@ -109,13 +109,13 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="gitlab-ci.html" />
+    <link rel="next" href="frp.html" />
     
     
     <link rel="prev" href="../host.html" />
     
 
-    <link href="https://vonchange.github.io/rss" title="小白鼠V技术驿站" rel="alternate" type="application/rss+xml" />
+    <link href="http://www.vonchange.com/rss" title="小白鼠V技术驿站" rel="alternate" type="application/rss+xml" />
 
     <style>
     @media only screen and (max-width: 640px) {
@@ -171,7 +171,7 @@
     
         
         <li>
-            <a href="https://vonchange.github.io/" target="_blank" class="custom-link">小白鼠V的技术博客</a>
+            <a href="http://www.vonchange.com/" target="_blank" class="custom-link">小白鼠V的技术博客</a>
         </li>
     
     
@@ -237,20 +237,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="gitlab-ci.html">
-            
-                <a href="gitlab-ci.html">
-            
-                    
-                    搭建gitlab并使用CICD部署HelloWorld
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="frp.html">
+        <li class="chapter " data-level="1.3.2" data-path="frp.html">
             
                 <a href="frp.html">
             
@@ -263,12 +250,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="gitea.html">
+        <li class="chapter " data-level="1.3.3" data-path="gitlab-ci.html">
             
-                <a href="gitea.html">
+                <a href="gitlab-ci.html">
             
                     
-                    gitea替换gitlab部署CICD
+                    搭建gitlab并使用CICD部署HelloWorld
             
                 </a>
             
@@ -340,35 +327,35 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><ul><li><span class="title-icon "></span><a href="#&#x642D;&#x5EFA;ubuntu-server&#x53CA;&#x5176;k8s"><b>1.1.1. </b>&#x642D;&#x5EFA;ubuntu server&#x53CA;&#x5176;k8s</a></li><li><span class="title-icon "></span><a href="#&#x642D;&#x5EFA;-&#x672C;&#x5730;k8s&#x51C6;&#x5907;&#x5DE5;&#x4F5C;"><b>1.1.2. </b>&#x642D;&#x5EFA; &#x672C;&#x5730;k8s&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h3 id="&#x642D;&#x5EFA;ubuntu-server&#x53CA;&#x5176;k8s"><a name="&#x642D;&#x5EFA;ubuntu-server&#x53CA;&#x5176;k8s" class="anchor-navigation-ex-anchor" href="#&#x642D;&#x5EFA;ubuntu-server&#x53CA;&#x5176;k8s"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x642D;&#x5EFA;ubuntu server&#x53CA;&#x5176;k8s</h3>
-<p>&#x642D;&#x5EFA;ubuntu server &#x53C2;&#x8003;: <a href="https://www.jianshu.com/p/da49cd69e8ff" target="_blank">https://www.jianshu.com/p/da49cd69e8ff</a></p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><ul><li><span class="title-icon "></span><a href="#搭建ubuntu-server及其k8s"><b>1.1.1. </b>搭建ubuntu server及其k8s</a></li><li><span class="title-icon "></span><a href="#搭建-本地k8s准备工作"><b>1.1.2. </b>搭建 本地k8s准备工作</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h3 id="搭建ubuntu-server及其k8s"><a name="搭建ubuntu-server及其k8s" class="anchor-navigation-ex-anchor" href="#搭建ubuntu-server及其k8s"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. 搭建ubuntu server及其k8s</h3>
+<p>搭建ubuntu server 参考: <a href="https://www.jianshu.com/p/da49cd69e8ff" target="_blank">https://www.jianshu.com/p/da49cd69e8ff</a></p>
 <ol>
-<li>&#x6211;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x8FC7;&#x4E86; &#x6CA1;&#x7559;&#x5565;&#x6587;&#x6863; &#x57FA;&#x672C;&#x6309;&#x7167;&#x5B89;&#x88C5;ubuntu server&#x53C2;&#x8003;&#x5B89;&#x88C5;&#x5373;&#x53EF; &#x8FD9;&#x91CC;&#x53EA;&#x8BF4;&#x81EA;&#x5DF1;&#x8E29;&#x8FC7;&#x7684;&#x5751;</li>
-<li>&#x6211;&#x5B89;&#x88C5;&#x7684;&#x7248;&#x672C;&#x662F; ubuntu server 16.04.6 &#x5B89;&#x88C5;&#x8BED;&#x8A00;&#x5FC5;&#x987B;&#x9009;&#x62E9;English &#x4E5F;&#x5C31;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;&#x5B89;&#x88C5;&#x754C;&#x9762; 
-&#x4F46;&#x5728; &quot;Welcome&quot; &#x8BED;&#x8A00;&#x9009;&#x62E9;&#x754C;&#x9762;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4E2D;&#x6587;(&#x53EA;&#x662F;&#x5B89;&#x88C5;&#x754C;&#x9762;&#x7684;&#x8BED;&#x8A00;) &#x4F46;&#x7B2C;&#x4E00;&#x4E2A;&#x6211;&#x5C1D;&#x8BD5;&#x8FC7;&#x9009;&#x62E9;&#x4E2D;&#x6587; &#x662F;&#x6709;&#x95EE;&#x9898; &#x5F53;&#x7136;&#x80FD;&#x529B;&#x8DB3;&#x591F;&#x6700;&#x597D;&#x90FD;&#x9009;&#x62E9;&#x82F1;&#x6587;</li>
-<li>&#x53CC;&#x7CFB;&#x7EDF; &#x78C1;&#x76D8;&#x5206;&#x533A;&#x9009;&#x62E9;&#x624B;&#x52A8;  &#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x4F60;&#x9884;&#x5907;&#x597D;&#x7684;&#x975E;&#x7CFB;&#x7EDF;ntfs&#x76D8;(&#x5728;win10&#x91CC;&#x6700;&#x597D;&#x683C;&#x5F0F;&#x5316;&#x8FC7;) &#x5220;&#x9664;&#x6B64;&#x5206;&#x533A;&#x53D8;&#x4E3A;&#x7A7A;&#x95F2;&#x5206;&#x533A; &#x9009;&#x62E9;&#x8BE5;&#x7A7A;&#x95F2;&#x5206;&#x533A;&#x81EA;&#x52A8;&#x5206;&#x533A; &#x786E;&#x5B9A;&#x6267;&#x884C;</li>
+<li>我已经安装过了 没留啥文档 基本按照安装ubuntu server参考安装即可 这里只说自己踩过的坑</li>
+<li>我安装的版本是 ubuntu server 16.04.6 安装语言必须选择English 也就是第一个安装界面 
+但在 &quot;Welcome&quot; 语言选择界面可以选择中文(只是安装界面的语言) 但第一个我尝试过选择中文 是有问题 当然能力足够最好都选择英文</li>
+<li>双系统 磁盘分区选择手动  选择一个你预备好的非系统ntfs盘(在win10里最好格式化过) 删除此分区变为空闲分区 选择该空闲分区自动分区 确定执行</li>
 </ol>
-<h3 id="&#x642D;&#x5EFA;-&#x672C;&#x5730;k8s&#x51C6;&#x5907;&#x5DE5;&#x4F5C;"><a name="&#x642D;&#x5EFA;-&#x672C;&#x5730;k8s&#x51C6;&#x5907;&#x5DE5;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x642D;&#x5EFA;-&#x672C;&#x5730;k8s&#x51C6;&#x5907;&#x5DE5;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x642D;&#x5EFA; &#x672C;&#x5730;k8s&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h3>
+<h3 id="搭建-本地k8s准备工作"><a name="搭建-本地k8s准备工作" class="anchor-navigation-ex-anchor" href="#搭建-本地k8s准备工作"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. 搭建 本地k8s准备工作</h3>
 <ol>
-<li>&#x5FC5;&#x987B;&#x5B89;&#x88C5;&#x4E86;ssh &#x5B89;&#x88C5;&#x7684;ubuntu&#x7684;&#x65F6;&#x5019;&#x53EF;&#x9009; &#x6CA1;&#x9009;&#x4E5F;&#x7B80;&#x5355; &#x81EA;&#x5DF1;&#x5B89;&#x88C5;&#x5373;&#x53EF;</li>
+<li>必须安装了ssh 安装的ubuntu的时候可选 没选也简单 自己安装即可</li>
 </ol>
-<pre><code class="lang-bash">sudo ps <span class="hljs-_">-e</span> |grep ssh  <span class="hljs-comment"># &#x67E5;&#x770B;&#x65F6;&#x5019;&#x5B89;&#x88C5;&#x8FC7;</span>
+<pre><code class="lang-bash">sudo ps <span class="hljs-_">-e</span> |grep ssh  <span class="hljs-comment"># 查看时候安装过</span>
 apt-get update 
-apt-get install openssh-server <span class="hljs-comment"># &#x4E0D;&#x5B58;&#x5728; &#x5B89;&#x88C5;</span>
+apt-get install openssh-server <span class="hljs-comment"># 不存在 安装</span>
 </code></pre>
 <ol>
-<li>&#x5FC5;&#x987B;&#x521B;&#x5EFA;root&#x7528;&#x6237; </li>
+<li>必须创建root用户 </li>
 </ol>
-<pre><code class="lang-bash">sudo passwd root <span class="hljs-comment"># &#x8BBE;&#x7F6E;root&#x7684;&#x5BC6;&#x7801;</span>
-su root <span class="hljs-comment">#&#x6765;&#x6D4B;&#x8BD5;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;root&#x7528;&#x6237;&#xFF0C;&#x5982;&#x679C;&#x51FA;&#x73B0;#&#x8BF4;&#x660E;&#x5DF2;&#x7ECF;&#x8BBE;&#x7F6E;root&#x7528;&#x6237;&#x7684;&#x5BC6;&#x7801;&#x6210;&#x529F;</span>
+<pre><code class="lang-bash">sudo passwd root <span class="hljs-comment"># 设置root的密码</span>
+su root <span class="hljs-comment">#来测试是否可以进入root用户，如果出现#说明已经设置root用户的密码成功</span>
 </code></pre>
 <ol>
-<li>&#x5FC5;&#x987B;&#x8BBE;&#x7F6E;ssh root&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x767B;&#x5F55;(&#x9ED8;&#x8BA4;&#x6CA1;&#x6709;&#x5F00;&#x542F;)</li>
+<li>必须设置ssh root用户可以登录(默认没有开启)</li>
 </ol>
-<pre><code class="lang-bash"><span class="hljs-comment"># &#x5176;&#x914D;&#x7F6E;&#x5728; sshd_config&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8FDB;&#x884C;&#x7F16;&#x8F91;&#xFF1A;</span>
+<pre><code class="lang-bash"><span class="hljs-comment"># 其配置在 sshd_config文件中，进行编辑：</span>
 vi /etc/ssh/sshd_config
 </code></pre>
-<pre><code class="lang-angular2html"> #&#x627E;&#x5230;PermitRootLogin &#x6DFB;&#x52A0;&#x4E00;&#x884C; PermitRootLogin yes&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;
+<pre><code class="lang-angular2html"> #找到PermitRootLogin 添加一行 PermitRootLogin yes，如下：
  # Authentication:
 #LoginGraceTime 2m
 #PermitRootLogin prohibit-password
@@ -377,38 +364,38 @@ PermitRootLogin yes
 #MaxAuthTries 6
 #MaxSessions 10
 </code></pre>
-<pre><code class="lang-bash"><span class="hljs-comment">#&#x4FDD;&#x5B58;&#x9000;&#x51FA;&#x540E;&#xFF0C;&#x91CD;&#x542F;ssh&#x670D;&#x52A1;&#xFF0C;&#x8F93;&#x5165;&#x547D;&#x4EE4;&#xFF1A;  </span>
+<pre><code class="lang-bash"><span class="hljs-comment">#保存退出后，重启ssh服务，输入命令：  </span>
 /etc/init.d/ssh restart
 </code></pre>
 <ol>
-<li>ifconfig &#x67E5;&#x770B;ip</li>
+<li>ifconfig 查看ip</li>
 </ol>
-<p><img src="../image/ip.png" alt="&#x67E5;&#x770B;ip"></p>
+<p><img src="../image/ip.png" alt="查看ip"></p>
 <ol>
-<li><p>&#x8FD9;&#x91CC;&#x63A8;&#x8350;&#x4F7F;&#x7528;secureCRT(secureFX) ssh root&#x767B;&#x5F55;</p>
+<li><p>这里推荐使用secureCRT(secureFX) ssh root登录</p>
 </li>
-<li><p>&#x51C6;&#x5907;&#x5C31;&#x7EEA; &#x53EF;&#x4EE5;&#x5B89;&#x88C5;k8s&#x4E86;</p>
+<li><p>准备就绪 可以安装k8s了</p>
 </li>
 </ol>
-<h4 id="&#x642D;&#x5EFA;-&#x672C;&#x5730;k8s&#xFF08;&#x61D2;&#x4EBA;&#x6CD5;"><a name="&#x642D;&#x5EFA;-&#x672C;&#x5730;k8s&#xFF08;&#x61D2;&#x4EBA;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x642D;&#x5EFA;-&#x672C;&#x5730;k8s&#xFF08;&#x61D2;&#x4EBA;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x642D;&#x5EFA; &#x672C;&#x5730;k8s&#xFF08;&#x61D2;&#x4EBA;&#x6CD5;)</h4>
+<h4 id="搭建-本地k8s（懒人法"><a name="搭建-本地k8s（懒人法" class="anchor-navigation-ex-anchor" href="#搭建-本地k8s（懒人法"><i class="fa fa-link" aria-hidden="true"></i></a>搭建 本地k8s（懒人法)</h4>
 <ol>
-<li>&#x642D;&#x5EFA;k8s&#x7F51;&#x4E0A;&#x6709;&#x591A;&#x79CD; &#x6BD4;&#x5982;kubeadmin &#x4F46;&#x56E0;&#x4E3A;&#x5899;&#x7684;&#x95EE;&#x9898; &#x9700;&#x8981;&#x722C;&#x8BB8;&#x591A;&#x5751; </li>
-<li>&#x8FD9;&#x91CC;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF1A;<a href="https://github.com/easzlab/kubeasz" target="_blank">kubeasz</a> &#x91CC;&#x9762;&#x6587;&#x6863;&#x4E5F;&#x5F88;&#x4E30;&#x5BCC;&#x6E05;&#x6670;&#xFF0C;&#x5BF9;&#x4E8E;&#x521D;&#x5B66;&#x8005;&#x6765;&#x8BF4;&#x5F88;&#x6709;&#x5E2E;&#x52A9;&#x3002;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x7FFB;&#x5899; </li>
-<li>&#x6211;&#x4E3B;&#x8981;&#x62FF; &#x4E3B;&#x673A;&#x505A;&#x5F00;&#x53D1;&#x670D;&#x52A1;&#x5668; &#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5668; &#x4E5F;&#x5C31;&#x662F;&#x53EA;&#x6709;master &#x6240;&#x4EE5;&#x9009;&#x62E9;&#x6700;&#x7B80;&#x5355;&#x7684; <a href="https://github.com/easzlab/kubeasz/blob/master/docs/setup/quickStart.md" target="_blank">&#x5355;&#x673A;&#x5FEB;&#x901F;&#x4F53;&#x9A8C;k8s&#x96C6;&#x7FA4;&#x7684;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;--AllinOne&#x90E8;&#x7F72;</a></li>
-<li>&#x5B89;&#x88C5;&#x4E0A;&#x9762;&#x6559;&#x7A0B;&#x5B89;&#x88C5;&#x5373;&#x53EF; &#x5F88;&#x7B80;&#x5355; &#x4F46;&#x524D;&#x63D0;&#x5FC5;&#x987B;ssh root&#x80FD;&#x767B;&#x5F55;(&#x6CA1;&#x5F00;&#x4E4B;&#x524D; &#x8001;&#x662F;&#x5B89;&#x88C5;&#x4E0D;&#x4E0A;)</li>
-<li>&#x8FD8;&#x6709;&#x5148;&#x4E0D;&#x8981;&#x7740;&#x6025;&#x5B89;&#x88C5; &#x6211;&#x5B89;&#x88C5;&#x540E;&#x53D1;&#x73B0;&#x4E00;&#x4E2A;&#x95EE;&#x9898; [&#x4F7F;&#x7528;2.0.3&#x7248;&#x672C;&#x540E;&#xFF0C;&#x5728;dashboard&#x4E2D;&#x770B;&#x4E0D;&#x5230;CPU&#x3001;MEM]<a href="https://github.com/easzlab/kubeasz/issues/666" target="_blank">https://github.com/easzlab/kubeasz/issues/666</a></li>
-<li>&#x5728;&#x6559;&#x7A0B;AllinOne&#x90E8;&#x7F72;2.&#x4E0B;&#x8F7D;&#x6587;&#x4EF6;&#x540E; &#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x63D0;&#x524D;&#x5728;roles/kube-node/templates/kubelet-config.yaml.j2&#x6587;&#x4EF6;&#x4E2D;&#x628A; readOnlyPort: 0 &#x6539;&#x6210; readOnlyPort: 10255 &#x518D;&#x6267;&#x884C;&#x90E8;&#x7F72;</li>
-<li>&#x73B0;&#x5728;&#x4F60;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x597D;&#x4E86;k8s &#x53EF;&#x4EE5;&#x52A8;&#x624B;&#x5404;&#x79CD;kubectl&#x547D;&#x4EE4; &#x597D;&#x8BB0;&#x6027;&#x4E0D;&#x5982;&#x70C2;&#x7B14;&#x5934; &#x53EF;&#x4EE5;&#x52A8;&#x624B;&#x5B66;&#x4E60;k8s&#x8FD8;&#x6709;docker</li>
+<li>搭建k8s网上有多种 比如kubeadmin 但因为墙的问题 需要爬许多坑 </li>
+<li>这里推荐使用：<a href="https://github.com/easzlab/kubeasz" target="_blank">kubeasz</a> 里面文档也很丰富清晰，对于初学者来说很有帮助。最主要的是不需要翻墙 </li>
+<li>我主要拿 主机做开发服务器 只有一个服务器 也就是只有master 所以选择最简单的 <a href="https://github.com/easzlab/kubeasz/blob/master/docs/setup/quickStart.md" target="_blank">单机快速体验k8s集群的测试环境--AllinOne部署</a></li>
+<li>安装上面教程安装即可 很简单 但前提必须ssh root能登录(没开之前 老是安装不上)</li>
+<li>还有先不要着急安装 我安装后发现一个问题 [使用2.0.3版本后，在dashboard中看不到CPU、MEM]<a href="https://github.com/easzlab/kubeasz/issues/666" target="_blank">https://github.com/easzlab/kubeasz/issues/666</a></li>
+<li>在教程AllinOne部署2.下载文件后 在服务器上提前在roles/kube-node/templates/kubelet-config.yaml.j2文件中把 readOnlyPort: 0 改成 readOnlyPort: 10255 再执行部署</li>
+<li>现在你已经安装好了k8s 可以动手各种kubectl命令 好记性不如烂笔头 可以动手学习k8s还有docker</li>
 </ol>
-<h4 id="&#x914D;&#x7F6E;docker&#x955C;&#x50CF;&#x52A0;&#x901F;"><a name="&#x914D;&#x7F6E;docker&#x955C;&#x50CF;&#x52A0;&#x901F;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;docker&#x955C;&#x50CF;&#x52A0;&#x901F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;docker&#x955C;&#x50CF;&#x52A0;&#x901F;</h4>
+<h4 id="配置docker镜像加速"><a name="配置docker镜像加速" class="anchor-navigation-ex-anchor" href="#配置docker镜像加速"><i class="fa fa-link" aria-hidden="true"></i></a>配置docker镜像加速</h4>
 <script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
 
-<pre><code class="lang-html">&#x4F5C;&#x8005;: &#x5C0F;&#x767D;&#x9F20;V
-&#x94FE;&#x63A5;: https://vonchange.github.io/doc/host/ubuntu.html
-&#x6765;&#x6E90;: &#x5C0F;&#x767D;&#x9F20;V&#x6280;&#x672F;&#x9A7F;&#x7AD9;
-&#x672C;&#x6587;&#x539F;&#x521B;&#x53D1;&#x5E03;&#x4E8E;&#x300C;&#x5C0F;&#x767D;&#x9F20;V&#x6280;&#x672F;&#x9A7F;&#x7AD9;&#x300D;,&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;,&#x8C22;&#x8C22;&#x5408;&#x4F5C;!
+<pre><code class="lang-html">作者: 小白鼠V
+链接: http://www.vonchange.com/doc/host/ubuntu.html
+来源: 小白鼠V技术驿站
+本文原创发布于「小白鼠V技术驿站」,转载请注明出处,谢谢合作!
 </code></pre>
-<p><footer class="page-footer"><span class="copyright">&#xA9; vonchange all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;: 
+<p><footer class="page-footer"><span class="copyright">© vonchange all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间: 
 2020-06-11 06:29:06
 </span></footer></p>
 <div id="gitalk-container"></div>
@@ -443,7 +430,7 @@ PermitRootLogin yes
                 </a>
                 
                 
-                <a href="gitlab-ci.html" class="navigation navigation-next " aria-label="Next page: 搭建gitlab并使用CICD部署HelloWorld">
+                <a href="frp.html" class="navigation navigation-next " aria-label="Next page: 使用frp代理本地机器到公网">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -454,7 +441,7 @@ PermitRootLogin yes
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"搭建ubuntu server及其k8s","level":"1.3.1","depth":2,"next":{"title":"搭建gitlab并使用CICD部署HelloWorld","level":"1.3.2","depth":2,"path":"doc/host/gitlab-ci.md","ref":"doc/host/gitlab-ci.md","articles":[]},"previous":{"title":"闲置主机做开发服务器","level":"1.3","depth":1,"path":"doc/host.md","ref":"doc/host.md","articles":[{"title":"搭建ubuntu server及其k8s","level":"1.3.1","depth":2,"path":"doc/host/ubuntu.md","ref":"doc/host/ubuntu.md","articles":[]},{"title":"搭建gitlab并使用CICD部署HelloWorld","level":"1.3.2","depth":2,"path":"doc/host/gitlab-ci.md","ref":"doc/host/gitlab-ci.md","articles":[]},{"title":"使用frp代理本地机器到公网","level":"1.3.3","depth":2,"path":"doc/host/frp.md","ref":"doc/host/frp.md","articles":[]},{"title":"gitea替换gitlab部署CICD","level":"1.3.4","depth":2,"path":"doc/host/gitea.md","ref":"doc/host/gitea.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["toc","theme-comscore","pageview-count","-lunr","-search","search-plus","splitter","-sharing","sharing-plus","expandable-chapters-small","anchor-navigation-ex","edit-link-plus","code","chart","favicon-absolute","github-buttons","advanced-emoji","rss","sitemap-general","copyright","tbfed-pagefooter","mygitalk","donate","diff","simple-mind-map","hide-element","audio_image","icp","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy vonchange","modify_label":"文件修订时间: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"diff":{"method":"diffChars","options":{},"type":"markdown"},"splitter":{},"copyright":{"copyProtect":false,"site":"https://vonchange.github.io/","author":"小白鼠V","website":"小白鼠V技术驿站"},"toc":{"addClass":true,"className":"toc"},"edit-link-plus":{"label":"编辑本页","base":{"vonchange.github.io":"https://github.com/VonChange/VonChange.github.io/edit/master"},"defaultBase":"https://github.com/VonChange/VonChange.github.io/edit/master"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"doc/image/zfb.jpeg","alipayText":"支付宝","button":"赏","title":"","wechat":"doc/image/wx.jpeg","wechatText":"微信"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{},"favicon":"/favicon.ico"},"sitemap-general":{"prefix":"https://vonchange.github.io/"},"hide-element":{"elements":["a.gitbook-link[href='https://www.gitbook.com']"]},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["orm","k8s","devops","java"],"title":"小白鼠V技术驿站","description":"小白鼠V技术驿站","author":"vonchange","site_url":"https://vonchange.github.io/","feed_url":"https://vonchange.github.io/rss","managingEditor":"vonchange@163.com","webMaster":"vonchange@163.com"},"audio_image":{},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"icp":{"link":"http://www.beian.miit.gov.cn/","style":{},"number":"鲁ICP备20022988号"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"vonchange","repo":"vonchange.github.io","type":"star","size":"small"}]},"expandable-chapters-small":{},"mygitalk":{"flipMoveOptions":{},"clientID":"7f7363b6e6e3c9a06f4f","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["vonchange"],"createIssueManually":false,"distractionFreeMode":false,"repo":"vonchange.github.io","owner":"vonchange","enableHotKey":true,"clientSecret":"6e71673a0cfb622b535af4c00b0622cf2d34d31b","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"colorful","style":{},"type":"markdown"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"vonchange","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小白鼠V技术驿站","language":"zh-hans","links":{"sidebar":{"小白鼠V的技术博客":"https://vonchange.github.io/"}},"gitbook":"3.2.3","description":"小白鼠V技术驿站"},"file":{"path":"doc/host/ubuntu.md","mtime":"2020-06-10T22:29:06.006Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T10:31:52.086Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"搭建ubuntu server及其k8s","level":"1.3.1","depth":2,"next":{"title":"使用frp代理本地机器到公网","level":"1.3.2","depth":2,"path":"doc/host/frp.md","ref":"doc/host/frp.md","articles":[]},"previous":{"title":"闲置主机做开发服务器","level":"1.3","depth":1,"path":"doc/host.md","ref":"doc/host.md","articles":[{"title":"搭建ubuntu server及其k8s","level":"1.3.1","depth":2,"path":"doc/host/ubuntu.md","ref":"doc/host/ubuntu.md","articles":[]},{"title":"使用frp代理本地机器到公网","level":"1.3.2","depth":2,"path":"doc/host/frp.md","ref":"doc/host/frp.md","articles":[]},{"title":"搭建gitlab并使用CICD部署HelloWorld","level":"1.3.3","depth":2,"path":"doc/host/gitlab-ci.md","ref":"doc/host/gitlab-ci.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["toc","theme-comscore","pageview-count","-lunr","-search","search-plus","splitter","-sharing","sharing-plus","expandable-chapters-small","anchor-navigation-ex","edit-link-plus","code","chart","favicon-absolute","github-buttons","advanced-emoji","rss","sitemap-general","copyright","tbfed-pagefooter","mygitalk","donate","diff","simple-mind-map","hide-element","audio_image","icp","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy vonchange","modify_label":"文件修订时间: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"diff":{"method":"diffChars","options":{},"type":"markdown"},"splitter":{},"copyright":{"copyProtect":false,"site":"http://www.vonchange.com/","author":"小白鼠V","website":"小白鼠V技术驿站"},"toc":{"addClass":true,"className":"toc"},"edit-link-plus":{"label":"编辑本页","base":{"vonchange.github.io":"https://github.com/VonChange/VonChange.github.io/edit/master"},"defaultBase":"https://github.com/VonChange/VonChange.github.io/edit/master"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"/doc/image/zfb.jpeg","alipayText":"支付宝","button":"赏","title":"","wechat":"/doc/image/wx.jpeg","wechatText":"微信"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{},"favicon":"/favicon.ico"},"sitemap-general":{"prefix":"http://www.vonchange.com/"},"hide-element":{"elements":["a.gitbook-link[href='https://www.gitbook.com']"]},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["orm","k8s","devops","java"],"title":"小白鼠V技术驿站","description":"小白鼠V技术驿站","author":"vonchange","site_url":"http://www.vonchange.com/","feed_url":"http://www.vonchange.com/rss","managingEditor":"vonchange@163.com","webMaster":"vonchange@163.com"},"audio_image":{},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"icp":{"link":"http://www.beian.miit.gov.cn/","style":{},"number":"鲁ICP备20022988号"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"vonchange","repo":"vonchange.github.io","type":"star","size":"small"}]},"expandable-chapters-small":{},"mygitalk":{"flipMoveOptions":{},"clientID":"7f7363b6e6e3c9a06f4f","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["vonchange"],"createIssueManually":false,"distractionFreeMode":false,"repo":"vonchange.github.io","owner":"vonchange","enableHotKey":true,"clientSecret":"6e71673a0cfb622b535af4c00b0622cf2d34d31b","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"colorful","style":{},"type":"markdown"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"vonchange","baidu-site-verification":"cAxqlT3C5k","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小白鼠V技术驿站","language":"zh-hans","links":{"sidebar":{"小白鼠V的技术博客":"http://www.vonchange.com/"}},"gitbook":"3.2.3","description":"小白鼠V技术驿站"},"file":{"path":"doc/host/ubuntu.md","mtime":"2020-06-10T22:29:06.006Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-04T05:41:10.109Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -513,7 +500,7 @@ PermitRootLogin yes
         
     
         
-        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script src="/myfile/gitalk/dist/gitalk.min.js"></script>
         
     
         

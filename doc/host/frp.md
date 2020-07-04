@@ -1,7 +1,7 @@
 ### 使用frp代理本地机器到公网
 
-#### 首先购买一个最最便宜的服务器 
-突发性能即可 比如(我安装的是CentOS 7.2  网络按流量)
+#### 首先购买一个最最便宜的服务器
+突发性能即可(双十一大优惠更好) (我安装的是CentOS 7.2  网络按流量)
 ![ecs](../image/aliecs.jpg)
 #### 安装docker 
 网上教程很多 比如:[https://www.jianshu.com/p/781da23f1b37](https://www.jianshu.com/p/781da23f1b37)
@@ -35,7 +35,7 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
-#### 安装 frps server
+#### 服务器安装 frps server
 ```
 -- 先/home/app/ 下弄好配置文件
 docker run --restart=unless-stopped  --net=host  -v /home/app/frps:/var/frp/conf --name frps -d registry.cn-hangzhou.aliyuncs.com/change_public/frps:2.0
@@ -58,3 +58,46 @@ subdomain_host = frp.?.com
 ```
 端口8099 或这tcp端口等需在阿里云安全组里添加映射
 
+#### 本地安装 frpc client
+
+
+```
+docker run  -d \
+--net=host \
+--name frpc \
+--restart unless-stopped \
+-v /home/?/data/frpc/config:/var/frp/conf \
+registry.cn-hangzhou.aliyuncs.com/change_public/frpc:1.0
+
+```
+> 配置demo 其他配置详情请参考[frp文档](https://github.com/fatedier/frp/blob/master/README_zh.md)
+```angular2html
+[common]
+server_addr = frp.vonchange.com
+server_port = 7000
+admin_addr = 127.0.0.1
+admin_port = 7400
+admin_user = admin
+admin_pwd = ？
+
+[web_gitlab]
+type=http
+local_ip = 127.0.0.1
+local_port = 8099
+subdomain = gitlab
+
+[ssh_gitlab]
+type=tcp
+local_ip = 127.0.0.1
+local_port = 6022
+remote_port = 6022
+subdomain = gitlab
+
+[web_k8s]
+type=https
+local_ip = 127.0.0.1
+local_port = 26751
+subdomain = k8s
+```
+
+> 这里 你就可以通过域名访问 你本地的服务做需要大量资源的微服务开发或者其他(个人云存储等)

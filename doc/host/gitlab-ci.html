@@ -7,7 +7,7 @@
         <title>搭建gitlab并使用CICD部署HelloWorld · 小白鼠V技术驿站</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="baidu-site-verification" content="cAxqlT3C5k">
         <meta name="author" content="vonchange">
         
         
@@ -50,7 +50,7 @@
                 
             
                 
-                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <link rel="stylesheet" href="/myfile/gitalk/dist/gitalk.css">
                 
             
                 
@@ -109,13 +109,11 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="frp.html" />
     
-    
-    <link rel="prev" href="ubuntu.html" />
+    <link rel="prev" href="frp.html" />
     
 
-    <link href="https://vonchange.github.io/rss" title="小白鼠V技术驿站" rel="alternate" type="application/rss+xml" />
+    <link href="http://www.vonchange.com/rss" title="小白鼠V技术驿站" rel="alternate" type="application/rss+xml" />
 
     <style>
     @media only screen and (max-width: 640px) {
@@ -171,7 +169,7 @@
     
         
         <li>
-            <a href="https://vonchange.github.io/" target="_blank" class="custom-link">小白鼠V的技术博客</a>
+            <a href="http://www.vonchange.com/" target="_blank" class="custom-link">小白鼠V的技术博客</a>
         </li>
     
     
@@ -237,20 +235,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="gitlab-ci.html">
-            
-                <a href="gitlab-ci.html">
-            
-                    
-                    搭建gitlab并使用CICD部署HelloWorld
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="frp.html">
+        <li class="chapter " data-level="1.3.2" data-path="frp.html">
             
                 <a href="frp.html">
             
@@ -263,12 +248,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="gitea.html">
+        <li class="chapter active" data-level="1.3.3" data-path="gitlab-ci.html">
             
-                <a href="gitea.html">
+                <a href="gitlab-ci.html">
             
                     
-                    gitea替换gitlab部署CICD
+                    搭建gitlab并使用CICD部署HelloWorld
             
                 </a>
             
@@ -340,40 +325,102 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><ul><li><span class="title-icon "></span><a href="#&#x642D;&#x5EFA;gitlab&#x5E76;&#x4F7F;&#x7528;cicd&#x90E8;&#x7F72;helloworld"><b>1.1.1. </b>&#x642D;&#x5EFA;gitlab&#x5E76;&#x4F7F;&#x7528;CICD&#x90E8;&#x7F72;HelloWorld</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h3 id="&#x642D;&#x5EFA;gitlab&#x5E76;&#x4F7F;&#x7528;cicd&#x90E8;&#x7F72;helloworld"><a name="&#x642D;&#x5EFA;gitlab&#x5E76;&#x4F7F;&#x7528;cicd&#x90E8;&#x7F72;helloworld" class="anchor-navigation-ex-anchor" href="#&#x642D;&#x5EFA;gitlab&#x5E76;&#x4F7F;&#x7528;cicd&#x90E8;&#x7F72;helloworld"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x642D;&#x5EFA;gitlab&#x5E76;&#x4F7F;&#x7528;CICD&#x90E8;&#x7F72;HelloWorld</h3>
-<h4 id="&#x642D;&#x5EFA;gitlab"><a name="&#x642D;&#x5EFA;gitlab" class="anchor-navigation-ex-anchor" href="#&#x642D;&#x5EFA;gitlab"><i class="fa fa-link" aria-hidden="true"></i></a>&#x642D;&#x5EFA;gitlab</h4>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><ul><ul><li><span class="title-icon "></span><a href="#搭建gitlab并使用cicd部署helloworld"><b>1.1.1. </b>搭建gitlab并使用CICD部署HelloWorld</a></li></ul></ul></ul></div><a href="#" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h3 id="搭建gitlab并使用cicd部署helloworld"><a name="搭建gitlab并使用cicd部署helloworld" class="anchor-navigation-ex-anchor" href="#搭建gitlab并使用cicd部署helloworld"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. 搭建gitlab并使用CICD部署HelloWorld</h3>
+<h4 id="搭建gitlab"><a name="搭建gitlab" class="anchor-navigation-ex-anchor" href="#搭建gitlab"><i class="fa fa-link" aria-hidden="true"></i></a>搭建gitlab</h4>
 <blockquote>
-<p>&#x8D2D;&#x4E70;&#x4E00;&#x4E2A;&#x57DF;&#x540D; &#x4E0D;&#x5907;&#x6848;&#x4E5F;&#x53EF;&#x4EE5; &#x6700;&#x597D;&#x5907;&#x6848;&#x4E86;</p>
+<p>购买一个域名 不备案也可以 最好备案了</p>
 <pre><code class="lang-angular2html">docker run --detach \
     --hostname gitlab.frp.?.com \
     --env GITLAB_OMNIBUS_CONFIG=&quot;external_url &apos;http://gitlab.frp.?.com:8099/&apos;; gitlab_rails[&apos;gitlab_shell_ssh_port&apos;] = 6022;gitlab_rails[&apos;gitlab_port&apos;] = 8099;&quot; \
     --publish 443:443 --publish 8099:8099 --publish 6022:22 \
     --name gitlab \
     --restart always \
-    --volume /home/vonchange/data/gitlab/:/etc/gitlab \
-    --volume /home/vonchange/data/gitlab/log:/var/log/gitlab \
-    --volume /home/vonchange/data/gitlab/data:/var/opt/gitlab \
+    --volume /home/?/data/gitlab/:/etc/gitlab \
+    --volume /home/?/data/gitlab/log:/var/log/gitlab \
+    --volume /home/?/data/gitlab/data:/var/opt/gitlab \
  gitlab/gitlab-ce:11.8.1-ce.0
 </code></pre>
 </blockquote>
 <ol>
-<li>ssh &#x7528;6022 http &#x4F7F;&#x7528;8099 &#x975E;80&#x7AEF;&#x53E3; &#x5F53;&#x7136;&#x7F51;&#x7AD9;&#x5907;&#x6848;&#x4E86;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;80&#x7AEF;&#x53E3;</li>
-<li>hostname &#x4F7F;&#x7528;&#x4F60;&#x8D2D;&#x4E70;&#x7684;&#x57DF;&#x540D; &#x6BD4;&#x5982; gitlab.frp.?.cn</li>
-<li>&#x547D;&#x4EE4;&#x7684;&#xFF1F; &#x53F7;&#x662F;&#x4F60;&#x8981;&#x66FF;&#x6362;&#x7684;&#x57DF;&#x540D;,volume &#x9700;&#x8981;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x4F60;&#x7684;&#x6620;&#x5C04;&#x672C;&#x5730;&#x5730;&#x5740;</li>
-<li>&#x65B9;&#x5411;&#x4EE3;&#x7406;&#x540E;&#x7684;&#x6700;&#x7EC8;&#x5730;&#x5740;&#x4E3A; gitlab.frp.?.cn:8099</li>
+<li>ssh 用6022 http 使用8099 非80端口 当然网站备案了也可以用80端口</li>
+<li>hostname 使用你购买的域名 比如 gitlab.frp.?.cn</li>
+<li>命令的？ 号是你要替换的域名,volume 需要你自定义你的映射本地地址</li>
+<li>方向代理后的最终地址为 gitlab.frp.?.cn:8099</li>
 </ol>
 <blockquote>
-<p>&#x53EF;&#x4EE5;&#x5148;&#x770B;&#x4F7F;&#x7528;frp&#x4EE3;&#x7406;&#x672C;&#x5730;&#x673A;&#x5668;&#x5230;&#x516C;&#x7F51;&#x6559;&#x7A0B;&#x540E;&#x5728; &#x56DE;&#x6765;&#x5B66;&#x4E60;&#x4E0B;&#x9762;CI&#x6559;&#x7A0B;</p>
+<p>可以先看使用frp代理本地机器到公网教程后在 回来学习下面CI教程</p>
+<p>root 进入gitlab 页面 <a href="http://gitlab.frp.?.com/admin/runners" target="_blank">http://gitlab.frp.?.com/admin/runners</a>
+<img src="../image/runner.jpg" alt="runner配置"></p>
 </blockquote>
+<h4 id="部署gitlab-runner"><a name="部署gitlab-runner" class="anchor-navigation-ex-anchor" href="#部署gitlab-runner"><i class="fa fa-link" aria-hidden="true"></i></a>部署gitlab-runner</h4>
+<pre><code class="lang-angularjs">docker run -d --name gitlab-runner --restart always \
+-v /home/?/data/gitlab-runner/config:/etc/gitlab-runner \
+-v /run/docker.sock:/var/run/docker.sock \
+gitlab/gitlab-runner:latest
+</code></pre>
+<blockquote>
+<p> 注册</p>
+</blockquote>
+<pre><code class="lang-angularjs">docker exec -it gitlab-runner gitlab-ci-multi-runner register
+</code></pre>
+<blockquote>
+<p>根据你的地址和token 注册 选择docker方式(企业级应当kubernetes shell等基本过时的废物不要用)</p>
+<pre><code class="lang-angularjs">Please enter the gitlab-ci coordinator URL:
+    http://?.com/
+Please enter the gitlab-ci token for this runner:
+    ?
+Please enter the gitlab-ci description for this runner:
+    commonh-runner
+Please enter the gitlab-ci tags for this runner (comma separated):
+    common
+Whether to run untagged builds [true/false]:
+    true
+Please enter the executor: docker, parallels, shell, kubernetes, docker-ssh, ssh, virtualbox, docker+machine, docker-ssh+machine:
+    docker 
+Please enter the default Docker image (e.g. ruby:2.1):
+    registry.cn-hangzhou.aliyuncs.com/xianbei_jdk/centos_jdk8:v1.2
+</code></pre>
+<p>配置可以不需要tag 运行
+<img src="../image/runner-config.jpg" alt="runner配置"></p>
+<p>修改/home/?/data/gitlab-runner/config 下config.toml 配置maven npm缓存 地址可以改成本地的url</p>
+</blockquote>
+<pre><code class="lang-angularjs">[[runners]]
+  name = &quot;common&quot;
+  url = &quot;http://192.168.0.?:8099/&quot;
+  token = &quot;?&quot;
+  executor = &quot;docker&quot;
+  [runners.custom_build_dir]
+  [runners.cache]
+    [runners.cache.s3]
+    [runners.cache.gcs]
+  [runners.docker]
+    tls_verify = false
+    image = &quot;registry.cn-hangzhou.aliyuncs.com/xianbei_jdk/centos_jdk8:v1.2&quot;
+    privileged = false
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes =  [&quot;/root/.npm:/root/.npm&quot;, &quot;/root/.ssh:/root/.ssh&quot;, &quot;/root/.sonar:/root/.sonar&quot;, &quot;/root/.m2:/root/.m2&quot;, &quot;/root/deploy:/root/deploy&quot;, &quot;/var/run/docker.sock:/var/run/docker.sock&quot;, &quot;/cache&quot;]
+    pull_policy = &quot;if-not-present&quot;
+    shm_size = 0
+</code></pre>
+<h4 id="部署helloworld"><a name="部署helloworld" class="anchor-navigation-ex-anchor" href="#部署helloworld"><i class="fa fa-link" aria-hidden="true"></i></a>部署helloworld</h4>
+<p>项目下添加.gitlab-ci.yml 参考项目</p>
+<blockquote>
+<p><a href="https://github.com/VonChange/deploy-file" target="_blank">https://github.com/VonChange/deploy-file</a>
+<a href="https://github.com/VonChange/hello-world" target="_blank">https://github.com/VonChange/hello-world</a></p>
+</blockquote>
+<p>master分支是 deploy-file项目把通用文件放到gitlab-runner挂载文件夹内 做到部署配置通用
+all-in-code 是配置在同一项目内 可参考 不推荐使用</p>
 <script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
 
-<pre><code class="lang-html">&#x4F5C;&#x8005;: &#x5C0F;&#x767D;&#x9F20;V
-&#x94FE;&#x63A5;: https://vonchange.github.io/doc/host/gitlab-ci.html
-&#x6765;&#x6E90;: &#x5C0F;&#x767D;&#x9F20;V&#x6280;&#x672F;&#x9A7F;&#x7AD9;
-&#x672C;&#x6587;&#x539F;&#x521B;&#x53D1;&#x5E03;&#x4E8E;&#x300C;&#x5C0F;&#x767D;&#x9F20;V&#x6280;&#x672F;&#x9A7F;&#x7AD9;&#x300D;,&#x8F6C;&#x8F7D;&#x8BF7;&#x6CE8;&#x660E;&#x51FA;&#x5904;,&#x8C22;&#x8C22;&#x5408;&#x4F5C;!
+<pre><code class="lang-html">作者: 小白鼠V
+链接: http://www.vonchange.com/doc/host/gitlab-ci.html
+来源: 小白鼠V技术驿站
+本文原创发布于「小白鼠V技术驿站」,转载请注明出处,谢谢合作!
 </code></pre>
-<p><footer class="page-footer"><span class="copyright">&#xA9; vonchange all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;: 
-2020-06-11 06:22:44
+<p><footer class="page-footer"><span class="copyright">© vonchange all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间: 
+2020-07-04 13:41:02
 </span></footer></p>
 <div id="gitalk-container"></div>
                                 
@@ -402,14 +449,10 @@
 
             
                 
-                <a href="ubuntu.html" class="navigation navigation-prev " aria-label="Previous page: 搭建ubuntu server及其k8s">
+                <a href="frp.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 使用frp代理本地机器到公网">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="frp.html" class="navigation navigation-next " aria-label="Next page: 使用frp代理本地机器到公网">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -418,7 +461,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"搭建gitlab并使用CICD部署HelloWorld","level":"1.3.2","depth":2,"next":{"title":"使用frp代理本地机器到公网","level":"1.3.3","depth":2,"path":"doc/host/frp.md","ref":"doc/host/frp.md","articles":[]},"previous":{"title":"搭建ubuntu server及其k8s","level":"1.3.1","depth":2,"path":"doc/host/ubuntu.md","ref":"doc/host/ubuntu.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toc","theme-comscore","pageview-count","-lunr","-search","search-plus","splitter","-sharing","sharing-plus","expandable-chapters-small","anchor-navigation-ex","edit-link-plus","code","chart","favicon-absolute","github-buttons","advanced-emoji","rss","sitemap-general","copyright","tbfed-pagefooter","mygitalk","donate","diff","simple-mind-map","hide-element","audio_image","icp","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy vonchange","modify_label":"文件修订时间: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"diff":{"method":"diffChars","options":{},"type":"markdown"},"splitter":{},"copyright":{"copyProtect":false,"site":"https://vonchange.github.io/","author":"小白鼠V","website":"小白鼠V技术驿站"},"toc":{"addClass":true,"className":"toc"},"edit-link-plus":{"label":"编辑本页","base":{"vonchange.github.io":"https://github.com/VonChange/VonChange.github.io/edit/master"},"defaultBase":"https://github.com/VonChange/VonChange.github.io/edit/master"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"doc/image/zfb.jpeg","alipayText":"支付宝","button":"赏","title":"","wechat":"doc/image/wx.jpeg","wechatText":"微信"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{},"favicon":"/favicon.ico"},"sitemap-general":{"prefix":"https://vonchange.github.io/"},"hide-element":{"elements":["a.gitbook-link[href='https://www.gitbook.com']"]},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["orm","k8s","devops","java"],"title":"小白鼠V技术驿站","description":"小白鼠V技术驿站","author":"vonchange","site_url":"https://vonchange.github.io/","feed_url":"https://vonchange.github.io/rss","managingEditor":"vonchange@163.com","webMaster":"vonchange@163.com"},"audio_image":{},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"icp":{"link":"http://www.beian.miit.gov.cn/","style":{},"number":"鲁ICP备20022988号"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"vonchange","repo":"vonchange.github.io","type":"star","size":"small"}]},"expandable-chapters-small":{},"mygitalk":{"flipMoveOptions":{},"clientID":"7f7363b6e6e3c9a06f4f","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["vonchange"],"createIssueManually":false,"distractionFreeMode":false,"repo":"vonchange.github.io","owner":"vonchange","enableHotKey":true,"clientSecret":"6e71673a0cfb622b535af4c00b0622cf2d34d31b","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"colorful","style":{},"type":"markdown"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"vonchange","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小白鼠V技术驿站","language":"zh-hans","links":{"sidebar":{"小白鼠V的技术博客":"https://vonchange.github.io/"}},"gitbook":"3.2.3","description":"小白鼠V技术驿站"},"file":{"path":"doc/host/gitlab-ci.md","mtime":"2020-06-10T22:22:44.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T10:31:52.086Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"搭建gitlab并使用CICD部署HelloWorld","level":"1.3.3","depth":2,"previous":{"title":"使用frp代理本地机器到公网","level":"1.3.2","depth":2,"path":"doc/host/frp.md","ref":"doc/host/frp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toc","theme-comscore","pageview-count","-lunr","-search","search-plus","splitter","-sharing","sharing-plus","expandable-chapters-small","anchor-navigation-ex","edit-link-plus","code","chart","favicon-absolute","github-buttons","advanced-emoji","rss","sitemap-general","copyright","tbfed-pagefooter","mygitalk","donate","diff","simple-mind-map","hide-element","audio_image","icp","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy vonchange","modify_label":"文件修订时间: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"diff":{"method":"diffChars","options":{},"type":"markdown"},"splitter":{},"copyright":{"copyProtect":false,"site":"http://www.vonchange.com/","author":"小白鼠V","website":"小白鼠V技术驿站"},"toc":{"addClass":true,"className":"toc"},"edit-link-plus":{"label":"编辑本页","base":{"vonchange.github.io":"https://github.com/VonChange/VonChange.github.io/edit/master"},"defaultBase":"https://github.com/VonChange/VonChange.github.io/edit/master"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"/doc/image/zfb.jpeg","alipayText":"支付宝","button":"赏","title":"","wechat":"/doc/image/wx.jpeg","wechatText":"微信"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{},"favicon":"/favicon.ico"},"sitemap-general":{"prefix":"http://www.vonchange.com/"},"hide-element":{"elements":["a.gitbook-link[href='https://www.gitbook.com']"]},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["orm","k8s","devops","java"],"title":"小白鼠V技术驿站","description":"小白鼠V技术驿站","author":"vonchange","site_url":"http://www.vonchange.com/","feed_url":"http://www.vonchange.com/rss","managingEditor":"vonchange@163.com","webMaster":"vonchange@163.com"},"audio_image":{},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"icp":{"link":"http://www.beian.miit.gov.cn/","style":{},"number":"鲁ICP备20022988号"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"vonchange","repo":"vonchange.github.io","type":"star","size":"small"}]},"expandable-chapters-small":{},"mygitalk":{"flipMoveOptions":{},"clientID":"7f7363b6e6e3c9a06f4f","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["vonchange"],"createIssueManually":false,"distractionFreeMode":false,"repo":"vonchange.github.io","owner":"vonchange","enableHotKey":true,"clientSecret":"6e71673a0cfb622b535af4c00b0622cf2d34d31b","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"colorful","style":{},"type":"markdown"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"vonchange","baidu-site-verification":"cAxqlT3C5k","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小白鼠V技术驿站","language":"zh-hans","links":{"sidebar":{"小白鼠V的技术博客":"http://www.vonchange.com/"}},"gitbook":"3.2.3","description":"小白鼠V技术驿站"},"file":{"path":"doc/host/gitlab-ci.md","mtime":"2020-07-04T05:41:02.890Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-04T05:41:10.109Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -477,7 +520,7 @@
         
     
         
-        <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+        <script src="/myfile/gitalk/dist/gitalk.min.js"></script>
         
     
         
