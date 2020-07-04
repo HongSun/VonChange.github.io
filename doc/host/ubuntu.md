@@ -45,7 +45,7 @@ PermitRootLogin yes
 
 4. ifconfig 查看ip
 
-![查看ip](../image/ip.png)
+![查看ip](http://www.vonchange.com/doc/image/ip.png)
 
 5. 这里推荐使用secureCRT(secureFX) ssh root登录
 
@@ -64,7 +64,11 @@ PermitRootLogin yes
 #### 配置docker镜像加速
 
 
+1. 登录阿里开发者平台
 
+进入Docker 镜像仓库 (https://cr.console.aliyun.com/#/imageList)，选中加速器 Tab
+
+![docker加速](https://img-blog.csdnimg.cn/20200704172507482.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZjeTUyMzQ3,size_16,color_FFFFFF,t_70)
 
 
 

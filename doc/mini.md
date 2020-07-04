@@ -135,6 +135,7 @@ public interface UserBaseRepository extends BaseRepository<UserBaseDO, Long> {
 
 
 > 实体类 定义ID 和TABLE 名
+
 ```
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -149,6 +150,7 @@ public class UserBaseDO {
 
 }
 ```
+
 
 
 ```
@@ -175,9 +177,9 @@ public class DemoApplication {
 
 
 
-> 偷懒简化 if test 和in查询 识别 {@开头
+##### 偷懒简化 if test 和in查询 识别 [@开头
 
->   \[@and id in idList] 等于
+#####   \[@and id in idList] 等于
 
 ```
 <if test="null!=idList and idList.size>0"> and id in <foreach
@@ -186,7 +188,7 @@ close=")">#{item}</foreach></if>
   
   ```
   
->   \[@and user_name <> userName] 等于
+#####   \[@and user_name <> userName] 等于
 
 ```
 <if test="null!=userName and ''!=userName"> and user_name <>
@@ -221,7 +223,7 @@ close=")">#{item}</foreach></if>
 
 6. \[@sql XX] XX markdown文件XX名的sql片段
 
->  相关注解 
+#####  相关注解 
 
 1. @ColumnNot 非字段注解 
 
@@ -244,7 +246,7 @@ close=")">#{item}</foreach></if>
     }
 ```
 
-> 批量更新插入
+##### 批量更新插入
 
 1. jdbc链接参数需加入rewriteBatchedStatements=true&allowMultiQueries=true
 
@@ -271,18 +273,20 @@ insert into user_base(`user_name`,`mobile_phone`,create_time) values
 ```
 
 
-> 大数据量流式读取
+##### 大数据量流式读取
 
 1. 使用场景: 不用编写复杂分包逻辑,表数据大小,可关联表查 可直接 select * from 整个表
    不用关心内存爆调 流的方式读取
    
 2. 使用例子 
 
-> 定义方法
+#####定义方法
+
 ```
 void findBigData(@Param("")AbstractPageWork<UserBaseDO> abstractPageWork,@Param("userName") String userName);
 ```
-> 定义sql
+
+##### 定义sql
 
 ```
 -- findBigData
@@ -293,7 +297,9 @@ select * from user_base
 ```
 > 使用demo
 
+
 ```
+
  AbstractPageWork<UserBaseDO> abstractPageWork = new AbstractPageWork<UserBaseDO>() {
             @Override
             protected void doPage(List<UserBaseDO> pageContentList, int pageNum, Map<String, Object> extData) {
@@ -310,4 +316,5 @@ select * from user_base
         };
        userBaseRepository.findBigData(abstractPageWork,"三");
        log.info("{} {} {}",abstractPageWork.getSize(),abstractPageWork.getTotalPages(),abstractPageWork.getTotalElements());
+
 ```

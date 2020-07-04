@@ -443,87 +443,82 @@ public interface UserBaseRepository extends BaseRepository&lt;UserBaseDO, Long&g
 </code></pre><blockquote>
 <p>默认sql 包下同名吧UserBaseRepository.md 识别```开头结尾的 -- 定义的同名方法
 参见<a href="https://github.com/VonChange/spring-data-mybatis-mini/blob/master/UserBaseRepository.md" target="_blank">UserBaseRepository.md</a></p>
-<p>实体类 定义ID 和TABLE 名
-```
-import javax.persistence.Id;
-import javax.persistence.Table;</p>
+<p>实体类 定义ID 和TABLE 名</p>
 </blockquote>
-<p>@Data
+<pre><code>import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Data
 @Table(name = &quot;user_base&quot;)
 public class UserBaseDO {
     @Id
     private Long id;
     private String userName;
-    private String  firstPhone;</p>
-<p>}</p>
-<pre><code>
+    private String  firstPhone;
 
-</code></pre><p>@Service
+}
+</code></pre><pre><code>
+@Service
 public class MyService {
   @Resource
-  private final UserBaseRepository userBaseRepository;</p>
-<p>  public void doWork() {
-     List<userbasedo> userBaseDOList = userBaseRepository.findList(&quot;test&quot;,new Date());
+  private final UserBaseRepository userBaseRepository;
+
+  public void doWork() {
+     List&lt;UserBaseDO&gt; userBaseDOList = userBaseRepository.findList(&quot;test&quot;,new Date());
  }
-}</userbasedo></p>
-<p>//添加 EnableMybatisMini 注解 
+}
+
+//添加 EnableMybatisMini 注解 
 @EnableMybatisMini
 @SpringBootApplication 
 public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
-} </p>
-<pre><code>
-
-
-&gt; 偷懒简化 if test 和in查询 识别 {@开头
-
-&gt;   \[@and id in idList] 等于
-</code></pre><if test="null!=idList and idList.size&gt;0"> and id in <foreach collection="idList" index="index" item="item" open="(" separator="," close=")">#{item}</foreach></if>
-
-<pre><code>
-&gt;   \[@and user_name &lt;&gt; userName] 等于
-</code></pre><if test="null!=userName and &apos;&apos;!=userName"> and user_name &lt;&gt;
-#{userName} </if>
-   ```
-
-3. in 查询List实体下的属性 \[@and id in userList:id]
-
-4.  like 
-
- ```
- [@and user_name like userName] 等于 and user_name like CONCAT(&apos;%&apos;,?,&apos;%&apos;)  
- [@and user_name like userName%] 等于 and user_name like  CONCAT(?,&apos;%&apos;) 
- [@and user_name like userName%] 等于 and user_name like CONCAT(&apos;%&apos;,&apos;test&apos;)   
-
- ```
-
-5. 其他非4个分隔
-
-```
-[@and id in #{idList:in} and user_name like #{userName:like}]
+}
+</code></pre><h5 id="偷懒简化-if-test-和in查询-识别-开头"><a name="偷懒简化-if-test-和in查询-识别-开头" class="anchor-navigation-ex-anchor" href="#偷懒简化-if-test-和in查询-识别-开头"><i class="fa fa-link" aria-hidden="true"></i></a>偷懒简化 if test 和in查询 识别 [@开头</h5>
+<h5 id="and-id-in-idlist-等于"><a name="and-id-in-idlist-等于" class="anchor-navigation-ex-anchor" href="#and-id-in-idlist-等于"><i class="fa fa-link" aria-hidden="true"></i></a>[@and id in idList] 等于</h5>
+<pre><code>&lt;if test=&quot;null!=idList and idList.size&gt;0&quot;&gt; and id in &lt;foreach
+collection=&quot;idList&quot; index=&quot;index&quot; item=&quot;item&quot; open=&quot;(&quot; separator=&quot;,&quot;
+close=&quot;)&quot;&gt;#{item}&lt;/foreach&gt;&lt;/if&gt;
+</code></pre><h5 id="and-username--username-等于"><a name="and-username--username-等于" class="anchor-navigation-ex-anchor" href="#and-username--username-等于"><i class="fa fa-link" aria-hidden="true"></i></a>[@and user_name &lt;&gt; userName] 等于</h5>
+<pre><code>&lt;if test=&quot;null!=userName and &apos;&apos;!=userName&quot;&gt; and user_name &lt;&gt;
+#{userName} &lt;/if&gt;
+</code></pre><ol>
+<li><p>in 查询List实体下的属性 [@and id in userList:id]</p>
+</li>
+<li><p>like </p>
+<pre><code>[@and user_name like userName] 等于 and user_name like CONCAT(&apos;%&apos;,?,&apos;%&apos;)  
+[@and user_name like userName%] 等于 and user_name like  CONCAT(?,&apos;%&apos;) 
+[@and user_name like userName%] 等于 and user_name like CONCAT(&apos;%&apos;,&apos;test&apos;)
+</code></pre></li>
+<li><p>其他非4个分隔</p>
+</li>
+</ol>
+<pre><code>[@and id in #{idList:in} and user_name like #{userName:like}]
 等于
-<if test="@com.vonchange.mybatis.tpl.MyOgnl@isNotEmpty(idList) and @com.vonchange.mybatis.tpl.MyOgnl@isNotEmpty(userName) "> and id in <foreach collection="idList" index="index" item="item" open="(" separator="," close=")">#{item}</foreach> and user_name like  CONCAT(&apos;%&apos;,#{userName},&apos;%&apos;)  </if>
+&lt;if test=&quot;@com.vonchange.mybatis.tpl.MyOgnl@isNotEmpty(idList) and @com.vonchange.mybatis.tpl.MyOgnl@isNotEmpty(userName) &quot;&gt; and id in &lt;foreach collection=&quot;idList&quot; index=&quot;index&quot; item=&quot;item&quot; open=&quot;(&quot; separator=&quot;,&quot; close=&quot;)&quot;&gt;#{item}&lt;/foreach&gt; and user_name like  CONCAT(&apos;%&apos;,#{userName},&apos;%&apos;)  &lt;/if&gt;
 
-<p> [@AND content -&gt; &apos;$.account&apos; = #{bean.account}]
+ [@AND content -&gt; &apos;$.account&apos; = #{bean.account}]
  等于
- <if test="null!=bean.account and &apos;&apos;!=bean.account">
+ &lt;if test=&quot;null!=bean.account and &apos;&apos;!=bean.account&quot;&gt;
  AND content -&gt; &apos;$.account&apos; = #{bean.account}
- </if></p>
-<pre><code>
-6. \[@sql XX] XX markdown文件XX名的sql片段
-
-&gt;  相关注解 
-
-1. @ColumnNot 非字段注解 
-
-2. InsertIfNull UpdateIfNull 插入或者更新为空时默认值 可使用函数
-
-3. UpdateNotNull updateAllField方法NULL值忽略
-
-4. ReadDataSource 指定某个方法读数据源 默认配置多数据源随机取
-</code></pre><p> //自定义 读库数据源 不自定义默认所有你设置的数据源
+ &lt;/if&gt;
+</code></pre><ol>
+<li>[@sql XX] XX markdown文件XX名的sql片段</li>
+</ol>
+<h5 id="相关注解"><a name="相关注解" class="anchor-navigation-ex-anchor" href="#相关注解"><i class="fa fa-link" aria-hidden="true"></i></a>相关注解</h5>
+<ol>
+<li><p>@ColumnNot 非字段注解 </p>
+</li>
+<li><p>InsertIfNull UpdateIfNull 插入或者更新为空时默认值 可使用函数</p>
+</li>
+<li><p>UpdateNotNull updateAllField方法NULL值忽略</p>
+</li>
+<li><p>ReadDataSource 指定某个方法读数据源 默认配置多数据源随机取 </p>
+</li>
+</ol>
+<pre><code> //自定义 读库数据源 不自定义默认所有你设置的数据源
     @Bean
     public ReadDataSources initReadDataSources(){
         return new ReadDataSources() {
@@ -532,70 +527,71 @@ public class DemoApplication {
                 return new DataSource[]{mainDataSource(),mainDataSource(),readDataSource()};
             }
         };
-    }</p>
+    }
+</code></pre><h5 id="批量更新插入"><a name="批量更新插入" class="anchor-navigation-ex-anchor" href="#批量更新插入"><i class="fa fa-link" aria-hidden="true"></i></a>批量更新插入</h5>
+<ol>
+<li><p>jdbc链接参数需加入rewriteBatchedStatements=true&amp;allowMultiQueries=true</p>
+</li>
+<li><p>提供insertBatch(默认第一行不为NULL的字段) 可在markdown里自定义sql
+无需关心List对象大小</p>
+</li>
+<li><p>经测试简单数据插入1万耗时1s以内</p>
+</li>
+<li><p>自定义实现(建议使用 更透明)</p>
+</li>
+</ol>
 <pre><code>
-&gt; 批量更新插入
-
-1. jdbc链接参数需加入rewriteBatchedStatements=true&amp;allowMultiQueries=true
-
-2. 提供insertBatch(默认第一行不为NULL的字段) 可在markdown里自定义sql
-   无需关心List对象大小
-
-3. 经测试简单数据插入1万耗时1s以内
-
-4. 自定义实现(建议使用 更透明)
-</code></pre><p>  @BatchUpdate(size = 5000)
-  int batchInsert(List<userbasedo> list);</userbasedo></p>
-<pre><code>
-只需定义单条insert 语句
-</code></pre><p>-- batchInsert
-insert into user_base(<code>user_name</code>,<code>mobile_phone</code>,create_time) values
-(#{userName},#{mobilePhone},#{createTime}) </p>
-<pre><code>
-
-&gt; 大数据量流式读取
-
-1. 使用场景: 不用编写复杂分包逻辑,表数据大小,可关联表查 可直接 select * from 整个表
-   不用关心内存爆调 流的方式读取
-
-2. 使用例子 
-
-&gt; 定义方法
-</code></pre><p>void findBigData(@Param(&quot;&quot;)AbstractPageWork<userbasedo> abstractPageWork,@Param(&quot;userName&quot;) String userName);</userbasedo></p>
-<pre><code>&gt; 定义sql
-</code></pre><p>-- findBigData
-select * from user_base</p>
-<p><where> 
+  @BatchUpdate(size = 5000)
+  int batchInsert(List&lt;UserBaseDO&gt; list);
+</code></pre><p>只需定义单条insert 语句</p>
+<pre><code>-- batchInsert
+insert into user_base(`user_name`,`mobile_phone`,create_time) values
+(#{userName},#{mobilePhone},#{createTime})
+</code></pre><h5 id="大数据量流式读取"><a name="大数据量流式读取" class="anchor-navigation-ex-anchor" href="#大数据量流式读取"><i class="fa fa-link" aria-hidden="true"></i></a>大数据量流式读取</h5>
+<ol>
+<li><p>使用场景: 不用编写复杂分包逻辑,表数据大小,可关联表查 可直接 select * from 整个表
+不用关心内存爆调 流的方式读取</p>
+</li>
+<li><p>使用例子 </p>
+</li>
+</ol>
+<h5 id="定义方法"><a name="定义方法" class="anchor-navigation-ex-anchor" href="#定义方法"><i class="fa fa-link" aria-hidden="true"></i></a>定义方法</h5>
+<pre><code>void findBigData(@Param(&quot;&quot;)AbstractPageWork&lt;UserBaseDO&gt; abstractPageWork,@Param(&quot;userName&quot;) String userName);
+</code></pre><h5 id="定义sql"><a name="定义sql" class="anchor-navigation-ex-anchor" href="#定义sql"><i class="fa fa-link" aria-hidden="true"></i></a>定义sql</h5>
+<pre><code>-- findBigData
+select * from user_base
+&lt;where&gt; 
 [@and user_name like userName]
-</where></p>
-<pre><code>&gt; 使用demo
-</code></pre><p> AbstractPageWork<userbasedo> abstractPageWork = new AbstractPageWork<userbasedo>() {
+&lt;/where&gt;
+</code></pre><blockquote>
+<p>使用demo</p>
+</blockquote>
+<pre><code>
+ AbstractPageWork&lt;UserBaseDO&gt; abstractPageWork = new AbstractPageWork&lt;UserBaseDO&gt;() {
             @Override
-            protected void doPage(List<userbasedo> pageContentList, int pageNum, Map<string, object=""> extData) {
+            protected void doPage(List&lt;UserBaseDO&gt; pageContentList, int pageNum, Map&lt;String, Object&gt; extData) {
                 pageContentList.forEach(userBaseDO -&gt; {
                     log.info(&quot;{}&quot;,userBaseDO.toString());
-                });</string,></userbasedo></userbasedo></userbasedo></p>
-<pre><code>        }
+                });
 
-        @Override
-        protected int getPageSize() {
-            return 500;
-        }
-    };
-   userBaseRepository.findBigData(abstractPageWork,&quot;三&quot;);
-   log.info(&quot;{} {} {}&quot;,abstractPageWork.getSize(),abstractPageWork.getTotalPages(),abstractPageWork.getTotalElements());
-</code></pre><pre><code>
+            }
 
+            @Override
+            protected int getPageSize() {
+                return 500;
+            }
+        };
+       userBaseRepository.findBigData(abstractPageWork,&quot;三&quot;);
+       log.info(&quot;{} {} {}&quot;,abstractPageWork.getSize(),abstractPageWork.getTotalPages(),abstractPageWork.getTotalElements());
+</code></pre><script type="text/javascript">var targetUl = document.getElementsByClassName('page-inner')[0].getElementsByTagName('ul')[0];if(targetUl.getElementsByTagName('a').length>0){targetUl.className='toc';}</script>
 
-&lt;script type=&quot;text/javascript&quot;&gt;var targetUl = document.getElementsByClassName(&apos;page-inner&apos;)[0].getElementsByTagName(&apos;ul&apos;)[0];if(targetUl.getElementsByTagName(&apos;a&apos;).length&gt;0){targetUl.className=&apos;toc&apos;;}&lt;/script&gt;
-
-```html
-作者: 小白鼠V
+<pre><code class="lang-html">作者: 小白鼠V
 链接: http://www.vonchange.com/doc/mini.html
 来源: 小白鼠V技术驿站
 本文原创发布于「小白鼠V技术驿站」,转载请注明出处,谢谢合作!
-</code></pre><p><footer class="page-footer"><span class="copyright">© vonchange all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间: 
-2020-07-04 13:46:45
+</code></pre>
+<p><footer class="page-footer"><span class="copyright">© vonchange all right reserved，powered by Gitbook</span><span class="footer-modification">文件修订时间: 
+2020-07-04 19:17:31
 </span></footer></p>
 <div id="gitalk-container"></div>
                                 
@@ -640,7 +636,7 @@ select * from user_base</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"spring-data-mybatis-mini极简ORM","level":"1.2","depth":1,"next":{"title":"闲置主机做开发服务器","level":"1.3","depth":1,"path":"doc/host.md","ref":"doc/host.md","articles":[{"title":"搭建ubuntu server及其k8s","level":"1.3.1","depth":2,"path":"doc/host/ubuntu.md","ref":"doc/host/ubuntu.md","articles":[]},{"title":"使用frp代理本地机器到公网","level":"1.3.2","depth":2,"path":"doc/host/frp.md","ref":"doc/host/frp.md","articles":[]},{"title":"搭建gitlab并使用CICD部署HelloWorld","level":"1.3.3","depth":2,"path":"doc/host/gitlab-ci.md","ref":"doc/host/gitlab-ci.md","articles":[]}]},"previous":{"title":"博客总揽","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toc","theme-comscore","pageview-count","-lunr","-search","search-plus","splitter","-sharing","sharing-plus","expandable-chapters-small","anchor-navigation-ex","edit-link-plus","code","chart","favicon-absolute","github-buttons","advanced-emoji","rss","sitemap-general","copyright","tbfed-pagefooter","mygitalk","donate","diff","simple-mind-map","hide-element","audio_image","icp","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy vonchange","modify_label":"文件修订时间: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"diff":{"method":"diffChars","options":{},"type":"markdown"},"splitter":{},"copyright":{"copyProtect":false,"site":"http://www.vonchange.com/","author":"小白鼠V","website":"小白鼠V技术驿站"},"toc":{"addClass":true,"className":"toc"},"edit-link-plus":{"label":"编辑本页","base":{"vonchange.github.io":"https://github.com/VonChange/VonChange.github.io/edit/master"},"defaultBase":"https://github.com/VonChange/VonChange.github.io/edit/master"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"/doc/image/zfb.jpeg","alipayText":"支付宝","button":"赏","title":"","wechat":"/doc/image/wx.jpeg","wechatText":"微信"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{},"favicon":"/favicon.ico"},"sitemap-general":{"prefix":"http://www.vonchange.com/"},"hide-element":{"elements":["a.gitbook-link[href='https://www.gitbook.com']"]},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["orm","k8s","devops","java"],"title":"小白鼠V技术驿站","description":"小白鼠V技术驿站","author":"vonchange","site_url":"http://www.vonchange.com/","feed_url":"http://www.vonchange.com/rss","managingEditor":"vonchange@163.com","webMaster":"vonchange@163.com"},"audio_image":{},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"icp":{"link":"http://www.beian.miit.gov.cn/","style":{},"number":"鲁ICP备20022988号"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"vonchange","repo":"vonchange.github.io","type":"star","size":"small"}]},"expandable-chapters-small":{},"mygitalk":{"flipMoveOptions":{},"clientID":"7f7363b6e6e3c9a06f4f","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["vonchange"],"createIssueManually":false,"distractionFreeMode":false,"repo":"vonchange.github.io","owner":"vonchange","enableHotKey":true,"clientSecret":"6e71673a0cfb622b535af4c00b0622cf2d34d31b","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"colorful","style":{},"type":"markdown"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"vonchange","baidu-site-verification":"cAxqlT3C5k","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小白鼠V技术驿站","language":"zh-hans","links":{"sidebar":{"小白鼠V的技术博客":"http://www.vonchange.com/"}},"gitbook":"3.2.3","description":"小白鼠V技术驿站"},"file":{"path":"doc/mini.md","mtime":"2020-07-04T05:46:45.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-04T05:46:50.776Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"spring-data-mybatis-mini极简ORM","level":"1.2","depth":1,"next":{"title":"闲置主机做开发服务器","level":"1.3","depth":1,"path":"doc/host.md","ref":"doc/host.md","articles":[{"title":"搭建ubuntu server及其k8s","level":"1.3.1","depth":2,"path":"doc/host/ubuntu.md","ref":"doc/host/ubuntu.md","articles":[]},{"title":"使用frp代理本地机器到公网","level":"1.3.2","depth":2,"path":"doc/host/frp.md","ref":"doc/host/frp.md","articles":[]},{"title":"搭建gitlab并使用CICD部署HelloWorld","level":"1.3.3","depth":2,"path":"doc/host/gitlab-ci.md","ref":"doc/host/gitlab-ci.md","articles":[]}]},"previous":{"title":"博客总揽","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toc","theme-comscore","pageview-count","-lunr","-search","search-plus","splitter","-sharing","sharing-plus","expandable-chapters-small","anchor-navigation-ex","edit-link-plus","code","chart","favicon-absolute","github-buttons","advanced-emoji","rss","sitemap-general","copyright","tbfed-pagefooter","mygitalk","donate","diff","simple-mind-map","hide-element","audio_image","icp","mermaid-gb3"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy vonchange","modify_label":"文件修订时间: ","modify_format":"YYYY-MM-DD HH:mm:ss"},"diff":{"method":"diffChars","options":{},"type":"markdown"},"splitter":{},"copyright":{"copyProtect":false,"site":"http://www.vonchange.com/","author":"小白鼠V","website":"小白鼠V技术驿站"},"toc":{"addClass":true,"className":"toc"},"edit-link-plus":{"label":"编辑本页","base":{"vonchange.github.io":"https://github.com/VonChange/VonChange.github.io/edit/master"},"defaultBase":"https://github.com/VonChange/VonChange.github.io/edit/master"},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"/doc/image/zfb.jpeg","alipayText":"支付宝","button":"赏","title":"","wechat":"/doc/image/wx.jpeg","wechatText":"微信"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"/apple-touch-icon-precomposed-152.png","appleTouchIconPrecomposedMore":{},"favicon":"/favicon.ico"},"sitemap-general":{"prefix":"http://www.vonchange.com/"},"hide-element":{"elements":["a.gitbook-link[href='https://www.gitbook.com']"]},"fontsettings":{"theme":"white","family":"sans","size":2},"rss":{"categories":["orm","k8s","devops","java"],"title":"小白鼠V技术驿站","description":"小白鼠V技术驿站","author":"vonchange","site_url":"http://www.vonchange.com/","feed_url":"http://www.vonchange.com/rss","managingEditor":"vonchange@163.com","webMaster":"vonchange@163.com"},"audio_image":{},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"theme-comscore":{},"icp":{"link":"http://www.beian.miit.gov.cn/","style":{},"number":"鲁ICP备20022988号"},"pageview-count":{},"github-buttons":{"buttons":[{"user":"vonchange","repo":"vonchange.github.io","type":"star","size":"small"}]},"expandable-chapters-small":{},"mygitalk":{"flipMoveOptions":{},"clientID":"7f7363b6e6e3c9a06f4f","number":-1,"perPage":10,"proxy":"https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token","admin":["vonchange"],"createIssueManually":false,"distractionFreeMode":false,"repo":"vonchange.github.io","owner":"vonchange","enableHotKey":true,"clientSecret":"6e71673a0cfb622b535af4c00b0622cf2d34d31b","pagerDirection":"last","labels":["Gitalk"]},"advanced-emoji":{"embedEmojis":false},"sharing":{"qq":true,"all":["facebook","google","twitter","weibo","instapaper","linkedin","pocket","stumbleupon"],"douban":true,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"simple-mind-map":{"autoFit":true,"linkShape":"diagonal","preset":"colorful","style":{},"type":"markdown"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"chart":{"type":"c3"},"search-plus":{}},"theme":"default","author":"vonchange","baidu-site-verification":"cAxqlT3C5k","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"小白鼠V技术驿站","language":"zh-hans","links":{"sidebar":{"小白鼠V的技术博客":"http://www.vonchange.com/"}},"gitbook":"3.2.3","description":"小白鼠V技术驿站"},"file":{"path":"doc/mini.md","mtime":"2020-07-04T11:17:31.963Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-04T23:53:16.053Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

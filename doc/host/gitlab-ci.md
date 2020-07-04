@@ -24,7 +24,7 @@ docker run --detach \
 > 可以先看使用frp代理本地机器到公网教程后在 回来学习下面CI教程
 
 > root 进入gitlab 页面 http://gitlab.frp.?.com/admin/runners
-![runner配置](../image/runner.jpg)
+![runner配置](http://www.vonchange.com/doc/image/runner.jpg)
 
 #### 部署gitlab-runner
 
@@ -40,7 +40,7 @@ gitlab/gitlab-runner:latest
 docker exec -it gitlab-runner gitlab-ci-multi-runner register
 
 ```
-> 根据你的地址和token 注册 选择docker方式(企业级应当kubernetes shell等基本过时的废物不要用)
+> 根据你的地址和token 注册 选择docker方式(企业级应当kubernetes shell等过时的不要用)
 ```angularjs
 Please enter the gitlab-ci coordinator URL:
     http://?.com/
@@ -59,7 +59,7 @@ Please enter the default Docker image (e.g. ruby:2.1):
 ```
 
 > 配置可以不需要tag 运行
-![runner配置](../image/runner-config.jpg)
+![runner配置](http://www.vonchange.com/doc/image/runner-config.jpg)
 
 > 修改/home/?/data/gitlab-runner/config 下config.toml 配置maven npm缓存 地址可以改成本地的url
 
