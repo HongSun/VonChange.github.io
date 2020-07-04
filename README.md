@@ -4,7 +4,7 @@
 
 
 
-- [![GitBook](https://img.shields.io/badge/BLOG-vonchange.github.io-brightgreen.svg)](https://vonchange.github.io/)
+- [![GitBook](https://img.shields.io/badge/BLOG-vonchange.github.io-brightgreen.svg)](https://www.vonchange.com/)
 - [![SpringDataMybatisMini](https://img.shields.io/badge/SpringDataMybatisMini-github-brightgreen.svg)](https://github.com/VonChange/spring-data-mybatis-mini)
 - [![SpringDataMybatisMini](https://img.shields.io/badge/SpringDataMybatisMini-gitee-brightgreen.svg)](https://gitee.com/vonchange/spring-data-mybatis-mini)
 
